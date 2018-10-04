@@ -11,6 +11,17 @@ const cross = "\u271A"
 
 const file1 = "./files/test1.eml"
 
+func TestParse(t *testing.T) {
+	buffer, err := ioutil.ReadFile(file1)
+	if err != nil {
+		t.Fatal("Error opening test file:", err)
+	}
+	t.Log("Testing mail parse")
+	{
+		Parse(buffer)
+	}
+}
+
 func TestParseHeader(t *testing.T) {
 	buffer, err := ioutil.ReadFile(file1)
 	if err != nil {
@@ -48,7 +59,7 @@ func TestParseHeader(t *testing.T) {
 	}
 }
 
-func TestParseBody(t *testing.T) {
+func TestParseContent(t *testing.T) {
 	buffer, err := ioutil.ReadFile(file1)
 	if err != nil {
 		t.Fatal("Error opening test file:", err)

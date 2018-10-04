@@ -10,3 +10,9 @@ type Attachment struct {
 	ContentInfo ContentInfo
 	Data        []byte
 }
+
+func ParseContent(buffer []byte) Content {
+	content := Content{}
+	content.Data = buffer
+	return content
+}
