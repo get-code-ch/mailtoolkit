@@ -1,0 +1,23 @@
+Delivered-To: dest@sample.com
+Received: by 2002:a02:564b:0:0:0:0:0 with SMTP id o72-v6csp2938579jab;
+        Sun, 17 Jun 2018 05:57:00 -0700 (PDT)
+X-Google-Smtp-Source: ADUXVKJJNw3HOJqW1FhOCJKrq0ze+LjiIqbK2JRUT9xl9XUtU72PO26SArgDTe5qtuWOlP5b0G9D
+X-Received: by 2002:a50:86eb:: with SMTP id 40-v6mr8112919edu.177.1529240220847;
+        Sun, 17 Jun 2018 05:57:00 -0700 (PDT)
+Return-Path: <from@sample.com>
+Received: from ams3.debieux.com (ams3.debieux.com. [178.62.213.108])
+        by mx.google.com with ESMTPS id f5-v6si4477982edn.275.2018.06.17.05.57.00
+        for <dest@sample.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+        Sun, 17 Jun 2018 05:57:00 -0700 (PDT)
+Received-SPF: pass (google.com: domain of from@sample.com designates 178.62.213.108 as permitted sender) client-ip=178.62.213.108;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of from@sample.com designates 178.62.213.108 as permitted sender) smtp.mailfrom=from@sample.com
+Date: Sun, 17 Jun 2018 05:57:00 -0700 (PDT)
+Message-Id: <5b265a9c.1c69fb81.4f10d.6091SMTPIN_ADDED_MISSING@mx.google.com>
+Received: from mail.sample.com (254-218-60-154.dclient.lsne.ch [254.218.60.154]) (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits)) (No client certificate requested) by ams3.debieux.com (Postfix) with ESMTPSA id 9343C7F58F for <dest@sample.com>; Sun, 17 Jun 2018 12:56:23 +0000 (UTC)
+from: from@sample.com
+rcpt: dest@sample.com
+subject: test 2
+
+Test 23

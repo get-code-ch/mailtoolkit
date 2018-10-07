@@ -9,16 +9,29 @@ const checkMark = "\u2714"
 const ballotX = "\u2718"
 const cross = "\u271A"
 
-const file1 = "./files/test1.eml"
+const file1 = "./files/test_multipart_complex.eml"
+const file2 = "./files/test_nonmime.eml"
 
 func TestParse(t *testing.T) {
-	buffer, err := ioutil.ReadFile(file1)
+	buffer1, err := ioutil.ReadFile(file1)
 	if err != nil {
 		t.Fatal("Error opening test file:", err)
 	}
-	t.Log("Testing mail parse")
+	t.Logf("Testing mail parse %s", file1)
 	{
-		Parse(buffer)
+		mail := Parse(&buffer1)
+		t.Logf("RAW mail content:\n%v§", string(mail.Content["raw"].Data))
+		//t.Logf("First part of mail content:\n%v§", string(mail.Content["0"].Data))
+		//t.Logf("First part of mail content:\n%v§", string(mail.Content["1"].Data))
+	}
+	buffer2, err := ioutil.ReadFile(file2)
+	if err != nil {
+		t.Fatal("Error opening test file:", err)
+	}
+	t.Logf("Testing mail parse %s", file2)
+	{
+		mail := Parse(&buffer2)
+		t.Logf("RAW mail content:\n%v", string(mail.Content["raw"].Data))
 	}
 }
 
@@ -31,7 +44,7 @@ func TestParseHeader(t *testing.T) {
 	{
 		contentType := "multipart"
 		boundary := "----=_NextPart_000_006D_01D4415F.8115DFE0"
-		header := ParseHeader(buffer)
+		header := ParseHeader(&buffer)
 		if header.ContentInfo.Type.Type != contentType {
 			t.Fatalf("\t%v Error wrong Content-Type, should be \"%s\"", ballotX, contentType)
 		}

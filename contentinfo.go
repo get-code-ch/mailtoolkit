@@ -5,27 +5,44 @@ import (
 	"strings"
 )
 
-type ContentInfo struct {
-	Type             ContentType
-	ID               string
-	Description      string
-	TransferEncoding string
-	Disposition      ContentDisposition
-}
+func getContentInfo(buffer []byte) ContentInfo {
+	var match [][]byte
+	contentInfo := ContentInfo{}
+	contentInfo.Type.Parameters = make(map[string]string)
+	contentInfo.Disposition.Parameters = make(map[string]string)
 
-type ContentType struct {
-	Type       string
-	Subtype    string
-	Parameters map[string]string
-}
+	// Get End of Header (blank line)
+	re := regexp.MustCompile(`(?m)(^[\n|\n\r]?$)`)
+	end := re.FindIndex(buffer)[0]
 
-type ContentDisposition struct {
-	Type       string
-	Parameters map[string]string
-}
+	// Get Content-Type
+	contentInfo.Type = getContentType(buffer[:end])
 
-var MIMEContentTypes = []string{"application", "audio", "image", "multipart", "text", "video"}
-var MIMEContentDispositionTypes = []string{"inline", "attachment"}
+	// Get Content-Disposition
+	contentInfo.Disposition = getContentDisposition(buffer[:end])
+
+	// Get Content-Transfer-Encoding Content-Transfer-Encoding:
+	re = regexp.MustCompile(`(?mi)(?:^\s*Content-Transfer-Encoding:\s+"?)(.*)(?:"?\n?)`)
+	match = re.FindSubmatch(buffer)
+	if match != nil {
+		contentInfo.TransferEncoding = string(match[1])
+	}
+
+	// Get Content-ID
+	re = regexp.MustCompile(`(?mi)(?:^\s*Content-ID:\s+"?)(.*)(?:"?\n?)`)
+	match = re.FindSubmatch(buffer)
+	if match != nil {
+		contentInfo.ID = string(match[1])
+	}
+	// Get Content-Description
+	re = regexp.MustCompile(`(?mi)(?:^\s*Content-Description:\s+"?)(.*)(?:"?\n?)`)
+	match = re.FindSubmatch(buffer)
+	if match != nil {
+		contentInfo.Description = string(match[1])
+	}
+
+	return contentInfo
+}
 
 func getContentType(buffer []byte) ContentType {
 	contentType := ContentType{}
@@ -35,8 +52,10 @@ func getContentType(buffer []byte) ContentType {
 	// Find Content-Type
 	re := regexp.MustCompile(`(?im)(?:^Content-Type: ?)(.+)(?:\r?\n)((?:\s*(?:\s+).*(?:\r?\n+))*)`)
 	wrkBuffer := re.FindSubmatch(buffer)
-	// If Content-Type is not found we return empty structure
+	// If Content-Type is not found we assume content type is Text/plain (non MIME email) rest of datas are nil
 	if wrkBuffer == nil {
+		contentType.Type = "text"
+		contentType.Subtype = "plain"
 		return contentType
 	}
 	// Concatenate parameters to one string and removing whitespaces
@@ -106,39 +125,4 @@ func getContentDisposition(buffer []byte) ContentDisposition {
 		}
 	}
 	return contentDisposition
-}
-
-func getContentInfo(buffer []byte) ContentInfo {
-	var match [][]byte
-	contentInfo := ContentInfo{}
-	contentInfo.Type.Parameters = make(map[string]string)
-	contentInfo.Disposition.Parameters = make(map[string]string)
-
-	// Get Content-Type
-	contentInfo.Type = getContentType(buffer)
-
-	// Get Content-Disposition
-	contentInfo.Disposition = getContentDisposition(buffer)
-
-	// Get Content-Transfer-Encoding Content-Transfer-Encoding:
-	re := regexp.MustCompile(`(?mi)(?:^\s*Content-Transfer-Encoding:\s+"?)(.*)(?:"?\n?)`)
-	match = re.FindSubmatch(buffer)
-	if match != nil {
-		contentInfo.TransferEncoding = string(match[1])
-	}
-
-	// Get Content-ID
-	re = regexp.MustCompile(`(?mi)(?:^\s*Content-ID:\s+"?)(.*)(?:"?\n?)`)
-	match = re.FindSubmatch(buffer)
-	if match != nil {
-		contentInfo.ID = string(match[1])
-	}
-	// Get Content-Description
-	re = regexp.MustCompile(`(?mi)(?:^\s*Content-Description:\s+"?)(.*)(?:"?\n?)`)
-	match = re.FindSubmatch(buffer)
-	if match != nil {
-		contentInfo.Description = string(match[1])
-	}
-
-	return contentInfo
 }

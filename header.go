@@ -5,30 +5,18 @@ import (
 	"strings"
 )
 
-type Header struct {
-	IsMime      bool
-	From        string
-	To          string
-	Cc          string
-	Cci         string
-	Date        string
-	Subject     string
-	Elements    map[string]string
-	ContentInfo ContentInfo
-}
-
-func ParseHeader(buffer []byte) Header {
+func ParseHeader(buffer *[]byte) Header {
 	var re *regexp.Regexp
 	var header Header
 
 	// Get End of Header (blank line)
 	re = regexp.MustCompile(`(?m)(^[\n|\n\r]?$)`)
-	end := re.FindIndex(buffer)
+	end := re.FindIndex(*buffer)
 
 	// Get Header Elements
 	header.Elements = make(map[string]string)
 	re = regexp.MustCompile(`(?mi)(^[\w_-]+)(?::\s+"?)(.*)(?:\r?\n)((?:\s*(?:\s+).*(?:\r?\n+))*)`)
-	elements := re.FindAllSubmatch(buffer[:end[0]], -1)
+	elements := re.FindAllSubmatch((*buffer)[:end[0]], -1)
 	for _, element := range elements {
 		value := ""
 		for _, fieldValue := range element[2:] {
@@ -48,19 +36,14 @@ func ParseHeader(buffer []byte) Header {
 	}
 
 	_, header.IsMime = header.Elements["mime-version"]
-	if header.IsMime {
-		header.ContentInfo = getContentInfo(buffer)
-	} else {
-		header.ContentInfo.Type.Type = "text"
-		header.ContentInfo.Type.Subtype = "plain"
-	}
+	header.ContentInfo = getContentInfo((*buffer)[:end[0]])
 
 	e, ok := header.Elements["from"]
 	if ok {
 		header.From = e
 	}
 
-	e, ok = header.Elements["to"]
+	e, ok = header.Elements["delivered-to"]
 	if ok {
 		header.To = e
 	}
