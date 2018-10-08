@@ -20,9 +20,9 @@ func TestParse(t *testing.T) {
 	t.Logf("Testing mail parse %s", file1)
 	{
 		mail := Parse(buffer1)
-		//t.Logf("RAW mail content:\n%v§", string(mail.Content["raw"].Data))
-		t.Logf("First part of mail content:\n%v§", string(mail.Content["0"].Data))
-		//t.Logf("First part of mail content:\n%v§", string(mail.Content["1"].Data))
+		//t.Logf("RAW mail content:\n%v", string(mail.Attachments["raw"].Data))
+		t.Logf("First part of mail content:\n%v", string(mail.Content["0"].Data))
+		//t.Logf("First part of mail content:\n%v", string(mail.Attachments["1"].Data))
 	}
 	buffer2, err := ioutil.ReadFile(file2)
 	if err != nil {
@@ -46,7 +46,7 @@ func TestParseHeader(t *testing.T) {
 		boundary := "----=_NextPart_000_006D_01D4415F.8115DFE0"
 		header := ParseHeader(buffer)
 		if header.ContentInfo.Type.Type != contentType {
-			t.Fatalf("\t%v Error wrong Content-Type, should be \"%s\"", ballotX, contentType)
+			t.Fatalf("\t%v Error wrong Attachments-Type, should be \"%s\"", ballotX, contentType)
 		}
 		if header.From == "" {
 			t.Errorf("\t%v Missing From value", ballotX)

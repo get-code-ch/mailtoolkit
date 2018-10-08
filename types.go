@@ -1,9 +1,9 @@
 package mailtoolkit
 
 type Mail struct {
-	Header     Header
-	Content    map[string]Content
-	Attachment map[string]Attachment
+	Header      Header
+	Content     map[string]Content
+	Attachments map[string]Attachment
 }
 
 type Header struct {
@@ -21,7 +21,7 @@ type Header struct {
 type Content struct {
 	ContentInfo ContentInfo
 	Data        []byte
-	Content     []Attachment
+	Attachments map[string]Attachment
 }
 
 type Attachment struct {

@@ -15,28 +15,28 @@ func getContentInfo(buffer []byte) ContentInfo {
 	re := regexp.MustCompile(`(?m)(^[\n|\n\r]?$)`)
 	end := re.FindIndex(buffer)[0]
 
-	// Get Content-Type
+	// Get Attachments-Type
 	contentInfo.Type = getContentType(buffer[:end])
 
-	// Get Content-Disposition
+	// Get Attachments-Disposition
 	contentInfo.Disposition = getContentDisposition(buffer[:end])
 
-	// Get Content-Transfer-Encoding Content-Transfer-Encoding:
+	// Get Attachments-Transfer-Encoding Attachments-Transfer-Encoding:
 	re = regexp.MustCompile(`(?mi)(?:^\s*Content-Transfer-Encoding:\s+"?)(.*)(?:"?\n?)`)
-	match = re.FindSubmatch(buffer)
+	match = re.FindSubmatch(buffer[:end])
 	if match != nil {
 		contentInfo.TransferEncoding = string(match[1])
 	}
 
-	// Get Content-ID
+	// Get Attachments-ID
 	re = regexp.MustCompile(`(?mi)(?:^\s*Content-ID:\s+"?)(.*)(?:"?\n?)`)
-	match = re.FindSubmatch(buffer)
+	match = re.FindSubmatch(buffer[:end])
 	if match != nil {
 		contentInfo.ID = string(match[1])
 	}
-	// Get Content-Description
+	// Get Attachments-Description
 	re = regexp.MustCompile(`(?mi)(?:^\s*Content-Description:\s+"?)(.*)(?:"?\n?)`)
-	match = re.FindSubmatch(buffer)
+	match = re.FindSubmatch(buffer[:end])
 	if match != nil {
 		contentInfo.Description = string(match[1])
 	}
@@ -49,10 +49,10 @@ func getContentType(buffer []byte) ContentType {
 	contentType.Parameters = make(map[string]string)
 	wrkCT := "" // working content-type string
 
-	// Find Content-Type
+	// Find Attachments-Type
 	re := regexp.MustCompile(`(?im)(?:^Content-Type: ?)(.+)(?:\r?\n)((?:\s*(?:\s+).*(?:\r?\n+))*)`)
 	wrkBuffer := re.FindSubmatch(buffer)
-	// If Content-Type is not found we assume content type is Text/plain (non MIME email) rest of datas are nil
+	// If Attachments-Type is not found we assume content type is Text/plain (non MIME email) rest of datas are nil
 	if wrkBuffer == nil {
 		contentType.Type = "text"
 		contentType.Subtype = "plain"
@@ -69,7 +69,7 @@ func getContentType(buffer []byte) ContentType {
 	re = regexp.MustCompile(`;`)
 	parameters := re.Split(wrkCT, -1)
 
-	// Get Content Type and Subtype
+	// Get Attachments Type and Subtype
 	re = regexp.MustCompile(`/`)
 	se := re.Split(parameters[0], -1)
 	contentType.Type = se[0]
@@ -92,10 +92,10 @@ func getContentDisposition(buffer []byte) ContentDisposition {
 	contentDisposition.Parameters = make(map[string]string)
 	wrkCD := "" // working content-disposition string
 
-	// Find Content-Type
+	// Find Attachments-Type
 	re := regexp.MustCompile(`(?im)(?:^Content-Disposition: ?)(.+)(?:\r?\n)((?:\s*(?:\s+).*(?:\r?\n+))*)`)
 	wrkBuffer := re.FindSubmatch(buffer)
-	// If Content-Type is not found we return empty structure
+	// If Attachments-Type is not found we return empty structure
 	if wrkBuffer == nil {
 		return contentDisposition
 	}
@@ -110,7 +110,7 @@ func getContentDisposition(buffer []byte) ContentDisposition {
 	re = regexp.MustCompile(`;`)
 	parameters := re.Split(wrkCD, -1)
 
-	// Get Content Type and Subtype
+	// Get Attachments Type and Subtype
 	re = regexp.MustCompile(`/`)
 	se := re.Split(parameters[0], -1)
 	contentDisposition.Type = se[0]

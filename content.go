@@ -51,8 +51,12 @@ func ParseContent(buffer []byte, header Header) map[string]Content {
 		} else {
 			parts[i].end = contentEnd
 		}
-
-		content[strconv.Itoa(i)] = Content{Data: rawContent[parts[i].start:parts[i].end], ContentInfo: getContentInfo(rawContent[parts[i].start:parts[i].end])}
+		c := Content{Data: rawContent[parts[i].start:parts[i].end], ContentInfo: getContentInfo(rawContent[parts[i].start:parts[i].end])}
+		if c.ContentInfo.Type.Type != "multipart" {
+			content[strconv.Itoa(i)] = c
+		} else {
+			content[strconv.Itoa(i)] = c
+		}
 	}
 
 	return content
