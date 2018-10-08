@@ -1,6 +1,6 @@
 package mailtoolkit
 
-func Parse(buffer *[]byte) Mail {
+func Parse(buffer []byte) Mail {
 	var Mail Mail
 
 	Mail.Header = ParseHeader(buffer)

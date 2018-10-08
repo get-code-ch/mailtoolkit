@@ -5,18 +5,18 @@ import (
 	"strings"
 )
 
-func ParseHeader(buffer *[]byte) Header {
+func ParseHeader(buffer []byte) Header {
 	var re *regexp.Regexp
 	var header Header
 
 	// Get End of Header (blank line)
 	re = regexp.MustCompile(`(?m)(^[\n|\n\r]?$)`)
-	end := re.FindIndex(*buffer)
+	end := re.FindIndex(buffer)
 
 	// Get Header Elements
 	header.Elements = make(map[string]string)
 	re = regexp.MustCompile(`(?mi)(^[\w_-]+)(?::\s+"?)(.*)(?:\r?\n)((?:\s*(?:\s+).*(?:\r?\n+))*)`)
-	elements := re.FindAllSubmatch((*buffer)[:end[0]], -1)
+	elements := re.FindAllSubmatch(buffer[:end[0]], -1)
 	for _, element := range elements {
 		value := ""
 		for _, fieldValue := range element[2:] {
@@ -36,7 +36,7 @@ func ParseHeader(buffer *[]byte) Header {
 	}
 
 	_, header.IsMime = header.Elements["mime-version"]
-	header.ContentInfo = getContentInfo((*buffer)[:end[0]])
+	header.ContentInfo = getContentInfo(buffer[:end[0]])
 
 	e, ok := header.Elements["from"]
 	if ok {
