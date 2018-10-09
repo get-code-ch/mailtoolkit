@@ -10,10 +10,14 @@ type delimiter struct {
 	end   int
 }
 
-func ParseContent(buffer []byte, header Header) map[string]Content {
+func ParseContent(buffer []byte, contentInfo ContentInfo, depth int) map[string]Content {
 	var parts []delimiter
 
 	content := make(map[string]Content)
+
+	if depth < 1 {
+		depth = 1
+	}
 
 	// Get first line of part
 	re := regexp.MustCompile(`(?m)(^[\n|\n\r]?$)`)
@@ -21,26 +25,26 @@ func ParseContent(buffer []byte, header Header) map[string]Content {
 	rawContent := buffer[contentStart:]
 
 	// Allways return a RAW mail content
-	content["raw"] = Content{Data: rawContent, ContentInfo: header.ContentInfo}
+	content["raw"] = Content{Data: rawContent, ContentInfo: contentInfo}
 
-	if !header.IsMime || header.ContentInfo.Type.Type != "multipart" {
+	if contentInfo.Type.Type != "multipart" {
 		return content
 	}
 
 	// Get content starting of mail based on boundary
-	re = regexp.MustCompile(`(?m)^--` + header.ContentInfo.Type.Parameters["boundary"] + `\s*$`)
+	re = regexp.MustCompile(`(?m)^--` + contentInfo.Type.Parameters["boundary"] + `\s*$`)
 	contentStart = re.FindIndex(rawContent)[0]
 	rawContent = rawContent[contentStart:]
 
 	// Extract all content as RAW format, multipart header and separation are ignored
-	re = regexp.MustCompile(`(?m)^--` + header.ContentInfo.Type.Parameters["boundary"] + `--\s*$`)
+	re = regexp.MustCompile(`(?m)^--` + contentInfo.Type.Parameters["boundary"] + `--\s*$`)
 	contentEnd := re.FindIndex(rawContent)[0]
 
 	rawContent = rawContent[:contentEnd]
 	content["raw"] = Content{Data: rawContent}
 
 	// Get
-	re = regexp.MustCompile(`(?m)--` + header.ContentInfo.Type.Parameters["boundary"] + `\s*$`)
+	re = regexp.MustCompile(`(?m)--` + contentInfo.Type.Parameters["boundary"] + `\s*$`)
 	contents := re.FindAllIndex(rawContent, -1)
 
 	for i := range contents {
@@ -51,11 +55,16 @@ func ParseContent(buffer []byte, header Header) map[string]Content {
 		} else {
 			parts[i].end = contentEnd
 		}
-		c := Content{Data: rawContent[parts[i].start:parts[i].end], ContentInfo: getContentInfo(rawContent[parts[i].start:parts[i].end])}
-		if c.ContentInfo.Type.Type != "multipart" {
-			content[strconv.Itoa(i)] = c
+		ci := getContentInfo(rawContent[parts[i].start:parts[i].end])
+		c := rawContent[parts[i].start:parts[i].end]
+		if ci.Type.Type != "multipart" {
+			content[strconv.Itoa(i*depth)] = Content{Data: c, ContentInfo: ci}
 		} else {
-			content[strconv.Itoa(i)] = c
+			if ci.Disposition.Type == "attachment" {
+				content[strconv.Itoa(i*depth)].Attachments[ci.Disposition.Parameters["filename"]] = Attachment{Data: c, ContentInfo: ci}
+			} else {
+				content = ParseContent(c, ci, depth*10)
+			}
 		}
 	}
 
