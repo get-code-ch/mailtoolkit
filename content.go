@@ -58,13 +58,22 @@ func ParseContent(buffer []byte, contentInfo ContentInfo, depth int) map[string]
 		ci := getContentInfo(rawContent[parts[i].start:parts[i].end])
 		c := rawContent[parts[i].start:parts[i].end]
 		if ci.Type.Type != "multipart" {
-			content[strconv.Itoa(i*depth)] = Content{Data: c, ContentInfo: ci}
-		} else {
 			if ci.Disposition.Type == "attachment" {
-				content[strconv.Itoa(i*depth)].Attachments[ci.Disposition.Parameters["filename"]] = Attachment{Data: c, ContentInfo: ci}
+				/*
+					_, ok := content[strconv.Itoa(i*depth)]
+					if !ok {
+						content[strconv.Itoa(i*depth)] = Content{}
+						content[strconv.Itoa(i*depth)].Attachments[ci.Disposition.Parameters["filename"]] = Attachment{}
+					}
+					a := Attachment{Data: c, ContentInfo: ci}
+					content[strconv.Itoa(i*depth)].Attachments[ci.Disposition.Parameters["filename"]] = a
+				*/
+				content[strconv.Itoa(i*depth)] = Content{Data: c, ContentInfo: ci}
 			} else {
-				content = ParseContent(c, ci, depth*10)
+				content[strconv.Itoa(i*depth)] = Content{Data: c, ContentInfo: ci}
 			}
+		} else {
+			content = ParseContent(c, ci, depth*10)
 		}
 	}
 
