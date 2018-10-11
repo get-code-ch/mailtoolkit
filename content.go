@@ -2,80 +2,67 @@ package mailtoolkit
 
 import (
 	"regexp"
-	"strconv"
 )
 
-type delimiter struct {
-	start int
-	end   int
-}
+func ParseContents(buffer []byte, contentInfo ContentInfo) ([]Content, map[string]Attachment) {
+	var start int
+	var end int
 
-func ParseContent(buffer []byte, contentInfo ContentInfo, depth int) map[string]Content {
-	var parts []delimiter
-
-	content := make(map[string]Content)
-
-	if depth < 1 {
-		depth = 1
-	}
+	contents := []Content{}
+	attachment := make(map[string]Attachment)
 
 	// Get first line of part
 	re := regexp.MustCompile(`(?m)(^[\n|\n\r]?$)`)
 	contentStart := re.FindIndex(buffer)[1] + 1
 	rawContent := buffer[contentStart:]
 
-	// Allways return a RAW mail content
-	content["raw"] = Content{Data: rawContent, ContentInfo: contentInfo}
+	// Allways return a RAW mail contents
+	contents = append(contents, Content{Data: rawContent, ContentInfo: contentInfo})
 
 	if contentInfo.Type.Type != "multipart" {
-		return content
+		return contents, nil
 	}
 
-	// Get content starting of mail based on boundary
+	// Get contents starting of mail based on boundary
 	re = regexp.MustCompile(`(?m)^--` + contentInfo.Type.Parameters["boundary"] + `\s*$`)
 	contentStart = re.FindIndex(rawContent)[0]
 	rawContent = rawContent[contentStart:]
 
-	// Extract all content as RAW format, multipart header and separation are ignored
+	// Extract all contents as RAW format, multipart header and separation are ignored
 	re = regexp.MustCompile(`(?m)^--` + contentInfo.Type.Parameters["boundary"] + `--\s*$`)
 	contentEnd := re.FindIndex(rawContent)[0]
 
 	rawContent = rawContent[:contentEnd]
-	content["raw"] = Content{Data: rawContent}
+	contents = append(contents, Content{Data: rawContent})
 
 	// Get
 	re = regexp.MustCompile(`(?m)--` + contentInfo.Type.Parameters["boundary"] + `\s*$`)
-	contents := re.FindAllIndex(rawContent, -1)
+	indexes := re.FindAllIndex(rawContent, -1)
 
-	for i := range contents {
-		delimiter := delimiter{start: contents[i][1] + 1}
-		parts = append(parts, delimiter)
-		if i < len(contents)-1 {
-			parts[i].end = contents[i+1][0]
+	for i := range indexes {
+		start = indexes[i][1] + 1
+		if i < len(indexes)-1 {
+			end = indexes[i+1][0]
 		} else {
-			parts[i].end = contentEnd
+			end = contentEnd
 		}
-		ci := getContentInfo(rawContent[parts[i].start:parts[i].end])
-		c := rawContent[parts[i].start:parts[i].end]
+		ci := getContentInfo(rawContent[start:end])
+
+		// Get first line of part
+		re := regexp.MustCompile(`(?m)(^[\n|\n\r]?$)`)
+		contentStart := re.FindIndex(rawContent)[1] + 1
+
+		c := rawContent[contentStart:end]
 		if ci.Type.Type != "multipart" {
 			if ci.Disposition.Type == "attachment" {
-				/*
-					_, ok := content[strconv.Itoa(i*depth)]
-					if !ok {
-						content[strconv.Itoa(i*depth)] = Content{}
-						content[strconv.Itoa(i*depth)].Attachments[ci.Disposition.Parameters["filename"]] = Attachment{}
-					}
-					a := Attachment{Data: c, ContentInfo: ci}
-					content[strconv.Itoa(i*depth)].Attachments[ci.Disposition.Parameters["filename"]] = a
-				*/
-				content[strconv.Itoa(i*depth)] = Content{Data: c, ContentInfo: ci}
+				attachment[ci.Disposition.Parameters["filename"]] = Attachment{Data: c, ContentInfo: ci}
 			} else {
-				content[strconv.Itoa(i*depth)] = Content{Data: c, ContentInfo: ci}
+				contents = append(contents, Content{Data: c, ContentInfo: ci})
 			}
 		} else {
-			content = ParseContent(c, ci, depth*10)
+			contents, _ = ParseContents(c, ci)
 		}
 	}
 
-	return content
+	return contents, attachment
 }

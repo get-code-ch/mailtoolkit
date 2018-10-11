@@ -2,7 +2,7 @@ package mailtoolkit
 
 type Mail struct {
 	Header      Header
-	Content     map[string]Content
+	Contents    []Content
 	Attachments map[string]Attachment
 }
 
