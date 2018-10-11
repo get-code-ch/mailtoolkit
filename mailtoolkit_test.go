@@ -20,8 +20,8 @@ func TestParse(t *testing.T) {
 	t.Logf("Testing mail parse %s", file1)
 	{
 		mail := Parse(buffer1)
-		for _, e := range mail.Contents {
-			t.Logf("First part of mail content:\n%v", string(e.Data))
+		for i, e := range mail.Contents {
+			t.Logf("%d part of mail content:\n%v", i, string(e.Data[:200]))
 		}
 	}
 	buffer2, err := ioutil.ReadFile(file2)

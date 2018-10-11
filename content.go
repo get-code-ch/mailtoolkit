@@ -7,8 +7,8 @@ import (
 func ParseContents(buffer []byte, contentInfo ContentInfo) ([]Content, map[string]Attachment) {
 	var start int
 	var end int
+	var contents []Content
 
-	contents := []Content{}
 	attachment := make(map[string]Attachment)
 
 	// Get first line of part
@@ -60,7 +60,8 @@ func ParseContents(buffer []byte, contentInfo ContentInfo) ([]Content, map[strin
 				contents = append(contents, Content{Data: c, ContentInfo: ci})
 			}
 		} else {
-			contents, _ = ParseContents(c, ci)
+			ctmp, _ := ParseContents(c, ci)
+			contents = append(contents, ctmp...)
 		}
 	}
 
