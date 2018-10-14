@@ -1,30 +1,25 @@
 package mailtoolkit
 
 import (
-	"regexp"
 	"strings"
 )
 
 func ParseHeader(buffer []byte) Header {
-	var re *regexp.Regexp
 	var header Header
 
 	// Get End of Header (blank line)
-	re = regexp.MustCompile(`(?m)(^[\n|\n\r]?$)`)
-	end := re.FindIndex(buffer)
+	end := firstLineRegex.FindIndex(buffer)
 
 	// Get Header Elements
 	header.Elements = make(map[string]string)
-	re = regexp.MustCompile(`(?mi)(^[\w_-]+)(?::\s+"?)(.*)(?:\r?\n)((?:\s*(?:\s+).*(?:\r?\n+))*)`)
-	elements := re.FindAllSubmatch(buffer[:end[0]], -1)
+	elements := headerRegex.FindAllSubmatch(buffer[:end[0]], -1)
 	for _, element := range elements {
 		value := ""
 		for _, fieldValue := range element[2:] {
 			value += string(fieldValue)
 		}
 		// cleaning string from whitespaces and newline....
-		re = regexp.MustCompile(`[ ]{2,}|[\t|\0|\n|\r]+`)
-		value = re.ReplaceAllString(value, ``)
+		value = whitespaceRegex.ReplaceAllString(value, ``)
 
 		key := strings.ToLower(string(element[1]))
 		_, exist := header.Elements[key]

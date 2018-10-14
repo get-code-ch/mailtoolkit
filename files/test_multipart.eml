@@ -1,0 +1,1608 @@
+Delivered-To: des@sample.ch
+Received: by 2002:a17:906:a1a:0:0:0:0 with SMTP id w26-v6csp2019618ejf;
+        Thu, 27 Sep 2018 11:00:41 -0700 (PDT)
+ARC-Authentication-Results: i=1; mx.sample.com;
+       dkim=pass header.i=@news.migrosmagazine.ch header.s=xcampaign header.b=lCt8Nmn2;
+       spf=pass (sample.com: domain of info@news.migrosmagazine.ch designates 2a01:28:ca:103:95:168:205:241 as permitted sender) smtp.mailfrom=info@news.migrosmagazine.ch;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=news.migrosmagazine.ch
+Return-Path: <info@news.migrosmagazine.ch>
+Received: from xpmsp69.xprofiler.ch (xpmsp69.xprofiler.ch. [2a01:28:ca:103:95:168:205:241])
+        by mx.sample.com with ESMTPS id k11-v6si2477424wrn.209.2018.09.27.11.00.40
+        for <des@sample.ch>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 27 Sep 2018 11:00:41 -0700 (PDT)
+Received-SPF: pass (sample.com: domain of info@news.migrosmagazine.ch designates 2a01:28:ca:103:95:168:205:241 as permitted sender) client-ip=2a01:28:ca:103:95:168:205:241;
+Authentication-Results: mx.sample.com;
+       dkim=pass header.i=@news.migrosmagazine.ch header.s=xcampaign header.b=lCt8Nmn2;
+       spf=pass (sample.com: domain of info@news.migrosmagazine.ch designates 2a01:28:ca:103:95:168:205:241 as permitted sender) smtp.mailfrom=info@news.migrosmagazine.ch;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=news.migrosmagazine.ch
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; t=1538064122; s=xcampaign; d=news.migrosmagazine.ch; i=info@news.migrosmagazine.ch; h=From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:List-Id:List-Unsubscribe; bh=R1LPfeD3UsZ9KSkOEnTYR8Fg5Ihkm2EcCny1it4mIuU=; b=lCt8Nmn2i+zUlA3QXL0SFmcUE/AXWo+zA3v6VVjB+cTngBuvj3Jns303i6TT+imQ qygMnu+1YzrpwNb+S15mh4KIjGksGz5AUdYXcGctRzXnlFd4GJwVJgCSZf4bDwIBUL6 I0UNs2BsHUbTu7moBn8zeq/GqZ0KTanyQsYAfS0U=
+From: Migros Magazine <info@news.migrosmagazine.ch>
+Reply-To: Migros Magazine <info@news.migrosmagazine.ch>
+To: des@sample.ch
+Message-ID: <180924094824260621.830344996316.12180927180055733304@xprofiler.ch>
+Subject: Lisez nos articles en avant-première!
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="----=_Part_54456_550841149.1538064122432"
+List-Id: <180924094824260621.xprofiler.ch>
+Date: Thu, 27 Sep 2018 20:00:34 +0200 (CEST)
+Comments: MADE_MP69_0_180927200034380935
+X-CSA-Complaints: whitelist-complaints@eco.de
+X-Mailer: SME
+User-Agent: SME
+
+------=_Part_54456_550841149.1538064122432
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+**********************************************************************
+MIGROS MAGAZINE
+**********************************************************************
+
+Le Don Quichotte de la lutte antidopage
+
+ Avec son agence de contr=C3=B4les ind=C3=A9pendante, Benjamin Cohen veut r=
+endre=20
+le sport plus propre.
+
+Lire l=E2=80=99article
+http://nl.migrosmagazine.ch/dispatcher/service?kt=3D180924094825090718&l=3D=
+fr&o=3D0&a=3D12180927180055733304
+
+**********************************************************************
+
+Bonjour,
+
+Le dopage est le plus grand ennemi de l=E2=80=99=C3=A9galit=C3=A9 des chanc=
+es. Les=20
+athl=C3=A8tes en sont les premi=C3=A8res victimes. Et ils auraient tout =C3=
+=A0 gagner=20
+=C3=A0 ce que les contr=C3=B4les antidopage=C2=A0se normalisent quelle que =
+soit la=20
+f=C3=A9d=C3=A9ration, le pays et la discipline.=C2=A0Permettre =C3=A0 toute=
+s les=20
+f=C3=A9d=C3=A9rations sportives d=E2=80=99avoir acc=C3=A8s =C3=A0 la m=C3=
+=AAme qualit=C3=A9 et ind=C3=A9pendance=20
+des tests, c'est l'objectif de la nouvelle agence de lutte antidopage=20
+fond=C3=A9e par le CIO =C3=A0 Lausanne. Si elle y parvient, elle pourrait b=
+ien=20
+faire avancer la cause et l=E2=80=99image du sport d=E2=80=99=C3=A9lite.=09
+
+=C3=89crivez-moi!
+http://nl.migrosmagazine.ch/dispatcher/service?kt=3D180924094825090718&l=3D=
+fr&o=3D1&a=3D12180927180055733304
+
+Cordialement,
+
+Steve Gaspoz
+Directeur de la r=C3=A9daction
+migrosmagazine
+
+
+Si ce message ne s'affiche pas correctement, veuillez cliquer ici.
+http://nl.migrosmagazine.ch/dispatcher/service?ac=3Dmapre&m=3D1218092718005=
+5733304&si=3D361255322270386139
+
+
+**********************************************************************
+Twitter:  https://twitter.com/migrosmagazine
+Instagram: https://www.instagram.com/migrosmagazine/
+Facebook: https://www.facebook.com/MigrosMagazine/
+**********************************************************************
+www.migrosmagazine.ch
+
+R=C3=A9silier la newsletter
+http://nl.migrosmagazine.ch/dispatcher/service?ac=3Dunsub&u=3D0&m=3D1218092=
+7180055733304&si=3D361255322270386139
+
+=C2=A9 2018 F=C3=A9d=C3=A9ration des coop=C3=A9ratives Migros=20
+
+Avec votre consentement, nous vous informons r=C3=A9guli=C3=A8rement sur le=
+s=20
+th=C3=A8mes actuels de Migros Magazine. Nous ne pouvons malheureusement=20
+pas totalement exclure certaines indications erron=C3=A9es et nous vous=20
+remercions d=E2=80=99avance de votre compr=C3=A9hension. Ces indications ne=
+ peuvent
+pas =C3=AAtre consid=C3=A9r=C3=A9es comme contractuelles. =09
+**********************************************************************
+
+------=_Part_54456_550841149.1538064122432
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+">
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1">
+    <meta name=3D"format-detection" content=3D"telephone=3Dno">
+   =20
+    <title>Newsletter</title>
+    <style>
+
+    body{
+        margin:0px;
+        padding:0px;
+    }
+
+    .mobile_font_colours *{
+            color:#003057 !important;
+            text-decoration: none !important;
+        }
+     =20
+      .preheader { display: none !important; }
+        =20
+        .mobile_font_colours .mobile_inline_text_color{
+            color:#003057 !important;=20
+            text-decoration: none !important;
+        }
+
+       =20
+
+    @media only screen and (min-width : 320px) and (max-width : 480px) {
+
+       .width100{
+            width: 100% !important;
+
+        }
+
+
+        .hide{
+            display: none !important;
+        }
+
+        .column{
+                display: block !important;
+                height:auto !important;
+                width:100% !important;
+        }
+
+        .mobileHeightAuto{
+            height:auto !important;
+        }
+
+        .mobileWidth10, .mobileWidth10 img{
+            width:10px !important;
+        }
+
+        .mobilePaddingTop20{
+            padding-top:20px !important;
+        }
+
+        .mobilePaddingBottom20{
+            padding-bottom:20px !important;
+        }
+
+        .mobilePaddingLeft20{
+            padding-left:20px !important;
+        }
+
+        .mobileAlignLeft{
+            text-align: left !important;
+        }
+
+        .mobileAlignCenter{
+            text-align: center !important;
+        }
+
+        .width80{
+            width:80% !important;
+        }
+
+        .mobile_redisplay_table{
+            display: table;
+        }
+
+        .column_header{
+            display:table-header-group;
+        }
+
+        .column_footer{
+            display: table-footer-group;
+        }
+     =20
+      .show{
+            display: block !important;
+            width: 100% !important;
+            height: auto !important;
+        }
+    }
+</style>
+</head>
+
+<body style=3D"-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; b=
+ackground-color:#c7c7c7;">
+<!--[if gte mso 9]> <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=
+=3D"false" style=3D"width:0px;height:0px"> <![endif]--><span style=3D"color=
+: transparent; display: none !important; height: 0; max-height: 0; max-widt=
+h: 0; opacity: 0; overflow: hidden; line-height: 0px; mso-line-height: exac=
+tly; mso-hide: all; visibility: hidden; width: 0;">Lisez nos articles en av=
+ant-premi=C3=A8re!</span><span style=3D"color: transparent; display: none !=
+important; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hi=
+dden; line-height: 0px; mso-line-height: exactly; mso-hide: all; visibility=
+: hidden; width: 0;">&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;</span><!--[if gte mso 9]> </v:rect> <![endif]--=
+>
+<div style=3D"display:none; white-space:nowrap; font:15px courier; color:#f=
+fffff; line-height:0px;">
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbs=
+p; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &n=
+bsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+</div>
+<font class=3D"preheader" style=3D"color:#ffffff; font-size:0px; line-heigh=
+t:0px">
+=09=09=09=09=09Lisez nos articles en avant-premi=C3=A8re!
+=09=09=09=09 </font>
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%">
+    <tr>
+        <td align=3D"center" valign=3D"top">
+            <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=
+=3D"600" class=3D"width100">
+                <tr>
+                    <td align=3D"left" valign=3D"top">
+
+                        <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%" class=3D"hide">
+                            <tr>
+                                <td align=3D"center" valign=3D"middle" heig=
+ht=3D"35" style=3D"font-family:Arial,Helvetica,sans-serif; font-size:12px; =
+line-height:15px; color:#ffffff;">
+                                    Si ce message ne s'affiche pas correcte=
+ment, veuillez cliquer <a href=3D"http://nl.migrosmagazine.ch/dispatcher/se=
+rvice?ac=3Dmapre&m=3D12180927180055733304&si=3D361255322270386139" target=
+=3D"_blank" style=3D"text-decoration:underline; outline:none; color:#FFFFFF=
+;">ici</a> .
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%">
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"600" class=3D"width100">
+                            <tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/logo_fr.jpg" alt=3D"logo" width=3D"480" class=3D=
+"width80" style=3D"border: none;">
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%">
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                        </table>
+                       =20
+                        <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%">
+                            <tr>
+                                <td align=3D"left" valign=3D"top" style=3D"=
+line-height: 0px; font-size: 0px;">
+                                    <a href=3D"http://nl.migrosmagazine.ch/=
+dispatcher/service?kh=3D180924094825090718&l=3Dfr&o=3D0&a=3D121809271800557=
+33304" target=3D"_blank"><img src=3D"http://ni.migrosmagazin.ch/mailing_sto=
+rage/2018/09/24/180924094824260621/180924094824950694_fr.jpg" width=3D"100%=
+" style=3D"border: none;"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top">
+                                    <table cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0" style=3D"background-color:#FFE500;">
+                                        <tr>
+                                            <td align=3D"left" valign=3D"to=
+p" height=3D"20" style=3D"font-size:0px; line-height:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"1" height=3D"20" style=3D"border: none;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align=3D"left" valign=3D"to=
+p">
+                                                <table cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0">
+                                                    <tr>
+                                                        <td align=3D"left" =
+valign=3D"top" width=3D"25" class=3D"mobileWidth10" style=3D"font-size:0px;=
+ line-height:0px;">
+                                                            <img src=3D"htt=
+p://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"sp=
+ace" width=3D"25" height=3D"1" style=3D"border: none;">
+                                                        </td>
+                                                        <td align=3D"left" =
+valign=3D"top">
+                                                            <table cellspac=
+ing=3D"0" cellpadding=3D"0" border=3D"0">
+                                                               =20
+                                                                <tr>
+                                                                    <td ali=
+gn=3D"center" valign=3D"top" style=3D"font-family: Georgia, Arial, Helvetic=
+a, sans-serif;  font-size: 40px; line-height: 44px; font-weight: bold; colo=
+r:#000000;">
+                                                                        Le =
+Don Quichotte de la lutte antidopage
+                                                                    </td>
+                                                                </tr>
+                                                               =20
+
+                                                               =20
+                                                                <tr>
+                                                                    <td ali=
+gn=3D"center" valign=3D"top" style=3D"font-family: Georgia, Arial, Helvetic=
+a, sans-serif; font-size: 40px; line-height: 44px; color:#000000;">
+                                                                        Ave=
+c son agence de contr=C3=B4les ind=C3=A9pendante, <strong>Benjamin Cohen</s=
+trong> veut rendre le sport plus propre.
+                                                                    </td>
+                                                                </tr>
+                                                                =20
+                                                            </table>
+                                                        </td>
+                                                        <td align=3D"left" =
+valign=3D"top" width=3D"25" class=3D"mobileWidth10" style=3D"font-size:0px;=
+ line-height:0px;">
+                                                            <img src=3D"htt=
+p://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"sp=
+ace" width=3D"25" height=3D"1" style=3D"border: none;">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>                 =20
+                                        <tr>
+                                            <td align=3D"left" valign=3D"to=
+p" height=3D"10" style=3D"font-size:0px; line-height:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"1" height=3D"10" style=3D"border: none;">
+                                            </td>
+                                        </tr>
+                                       =20
+                                        =20
+                                        <tr>
+                                            <td align=3D"center" valign=3D"=
+top">
+                                                <table cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0" style=3D"border: 2px solid #f67033;">
+                                                    <tr>
+                                                        <td align=3D"left" =
+valign=3D"top" width=3D"30" class=3D"mobileWidth10" style=3D"font-size:0px;=
+ line-height:0px;">
+                                                            <img src=3D"htt=
+p://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"sp=
+ace" width=3D"10" height=3D"1" style=3D"border: none;">
+                                                        </td>
+                                                        <td align=3D"center=
+" valign=3D"middle" height=3D"35" style=3D"font-family: Helvetica, Verdana,=
+ Geneva, sans-serif; font-size: 14px; line-height: 14px; color:#f67033;">
+                                                            <a href=3D"http=
+://nl.migrosmagazine.ch/dispatcher/service?kh=3D180924094825090718&l=3Dfr&o=
+=3D1&a=3D12180927180055733304" target=3D"_blank" style=3D"font-family: Helv=
+etica, Verdana, Geneva, sans-serif; font-size: 14px; line-height: 14px; col=
+or:#f67033; text-decoration: none;">
+                                                            <strong>Lire l=
+=E2=80=99article</strong>
+                                                            </a>
+                                                        </td>
+                                                        <td align=3D"left" =
+valign=3D"top" width=3D"30" class=3D"mobileWidth10" style=3D"font-size:0px;=
+ line-height:0px;">
+                                                            <img src=3D"htt=
+p://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"sp=
+ace" width=3D"30" height=3D"1" style=3D"border: none;">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                       =20
+                                        <tr>
+                                            <td align=3D"left" valign=3D"to=
+p" height=3D"20" style=3D"font-size:0px; line-height:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"1" height=3D"20" style=3D"border: none;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%">
+                            <tr>
+
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%" style=3D"background-color:#ffffff;">
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top">
+                                    <table cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0">
+                                        <tr>
+                                            <td align=3D"left" valign=3D"to=
+p" width=3D"40" class=3D"mobileWidth10" style=3D"font-size:0px; line-height=
+:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"40" height=3D"1" style=3D"border: none;">
+                                            </td>
+                                            <td align=3D"left" valign=3D"to=
+p">
+                                                <table cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0">
+                                                    <tr>
+                                                        <td align=3D"left" =
+valign=3D"top" style=3D"font-family: Georgia, Arial, Helvetica, sans-serif;=
+ font-size: 22px; line-height: 22px; font-weight: bold; font-style: italic;=
+ color:#f67033;">
+                                                            Bonjour,
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align=3D"left" =
+valign=3D"top" height=3D"20" style=3D"font-size:0px; line-height:0px;">
+                                                            <img src=3D"htt=
+p://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"sp=
+ace" width=3D"1" height=3D"15" style=3D"border: none;">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align=3D"left" =
+valign=3D"top">
+                                                            <table cellspac=
+ing=3D"0" cellpadding=3D"0" border=3D"0">
+                                                                <tr>
+                                                                    <td ali=
+gn=3D"left" valign=3D"top" width=3D"20" class=3D"hide" style=3D"font-size:0=
+px; line-height:0px;">
+                                                                        <im=
+g src=3D"http://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gi=
+f" alt=3D"space" width=3D"20" height=3D"1" style=3D"border: none;">
+                                                                    </td>
+                                                                    <td ali=
+gn=3D"left" valign=3D"top" style=3D"font-family: Helvetica, Verdana, Geneva=
+, sans-serif; font-size: 16px; line-height: 22px; color:#f67033;">
+                                                                        Le =
+dopage est le plus grand ennemi de l=E2=80=99=C3=A9galit=C3=A9 des chances.=
+ Les athl=C3=A8tes en sont les premi=C3=A8res victimes. Et ils auraient tou=
+t =C3=A0 gagner =C3=A0 ce que les contr=C3=B4les antidopage=C2=A0se normali=
+sent quelle que soit la f=C3=A9d=C3=A9ration, le pays et la discipline.=C2=
+=A0Permettre =C3=A0 toutes les f=C3=A9d=C3=A9rations sportives d=E2=80=99av=
+oir acc=C3=A8s =C3=A0 la m=C3=AAme qualit=C3=A9 et ind=C3=A9pendance des te=
+sts, c'est l'objectif de la nouvelle agence de lutte antidopage fond=C3=A9e=
+ par le CIO =C3=A0 Lausanne. Si elle y parvient, elle pourrait bien faire a=
+vancer la cause et l=E2=80=99image du sport d=E2=80=99=C3=A9lite.
+                                                                    </td>
+                                                                    <td ali=
+gn=3D"left" valign=3D"top" width=3D"20" class=3D"hide" style=3D"font-size:0=
+px; line-height:0px;">
+                                                                        <im=
+g src=3D"http://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gi=
+f" alt=3D"space" width=3D"20" height=3D"1" style=3D"border: none;">
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align=3D"left" =
+valign=3D"top" height=3D"20" style=3D"font-size:0px; line-height:0px;">
+                                                            <img src=3D"htt=
+p://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"sp=
+ace" width=3D"1" height=3D"20" style=3D"border: none;">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td align=3D"left" valign=3D"to=
+p" width=3D"30" class=3D"mobileWidth10" style=3D"font-size:0px; line-height=
+:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"30" height=3D"1" style=3D"border: none;">
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    <table cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0">
+                                        <tr>
+                                            <td align=3D"left" valign=3D"to=
+p" width=3D"20" class=3D"mobileWidth10" style=3D"font-size:0px; line-height=
+:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"20" height=3D"1" style=3D"border: none;">
+                                            </td>
+                                            <td align=3D"left" valign=3D"to=
+p">
+                                                <table cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0">
+                                                    <tr>
+                                                        <th align=3D"left" =
+valign=3D"top" class=3D"column" style=3D"font-size: 0px; line-height: 0px;"=
+><a href=3D"#" target=3D"_blank">
+                                                         <img src=3D"http:/=
+/ni.migrosmagazin.ch/mailing_storage/2018/09/24/180924094824260621/18092409=
+4824980701_fr.jpg" width=3D"270" class=3D"width100" style=3D"border: none;"=
+>
+                                                        </a>
+                                                     </th>
+                                                        <td align=3D"left" =
+valign=3D"top" width=3D"20" class=3D"hide" style=3D"font-size:0px; line-hei=
+ght:0px;">
+                                                            <img src=3D"htt=
+p://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"sp=
+ace" width=3D"20" height=3D"1" style=3D"border: none;">
+                                                        </td>
+                                                        <th align=3D"left" =
+valign=3D"top" class=3D"column mobilePaddingTop20" style=3D"font-size: 0px;=
+ line-height: 0px;">
+                                                            <table cellspac=
+ing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"270" class=3D"width100">
+                                                               =20
+                                                               <tr>
+                                                                    <td ali=
+gn=3D"left" valign=3D"top">
+                                                                        <ta=
+ble cellspacing=3D"0" cellpadding=3D"0" border=3D"0" style=3D"border: 2px s=
+olid #f67033;">
+                                                                           =
+ <tr>
+                                                                           =
+     <td align=3D"left" valign=3D"top" width=3D"30" class=3D"mobileWidth10"=
+ style=3D"font-size:0px; line-height:0px;">
+                                                                           =
+         <img src=3D"http://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/=
+space_1x1.gif" alt=3D"space" width=3D"10" height=3D"1" style=3D"border: non=
+e;">
+                                                                           =
+     </td>
+                                                                           =
+     <td align=3D"center" valign=3D"middle" height=3D"35" style=3D"font-fam=
+ily: Helvetica; font-size: 14px; line-height: 14px; color:#f67033;">
+                                                                           =
+         <a href=3D"#" target=3D"_blank" style=3D"font-family: Helvetica, V=
+erdana, Geneva, sans-serif; font-size: 14px; line-height: 14px; color:#f670=
+33; text-decoration: none;">
+                                                                           =
+         <a href=3D"mailto:steve.gaspoz@mediasmigros.ch?subject=3DLa%20news=
+letter%20de%20Migros%20Magazine">=C3=89crivez-moi!</a>
+                                                                           =
+         </a>
+                                                                           =
+     </td>
+                                                                           =
+     <td align=3D"left" valign=3D"top" width=3D"30" class=3D"mobileWidth10"=
+ style=3D"font-size:0px; line-height:0px;">
+                                                                           =
+         <img src=3D"http://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/=
+space_1x1.gif" alt=3D"space" width=3D"30" height=3D"1" style=3D"border: non=
+e;">
+                                                                           =
+     </td>
+                                                                           =
+ </tr>
+                                                                        </t=
+able>
+                                                                    </td>
+                                                                </tr>
+                                                               =20
+                                                                <tr>
+                                                                    <td ali=
+gn=3D"left" valign=3D"top" height=3D"20" style=3D"font-size:0px; line-heigh=
+t:0px;">
+                                                                        <im=
+g src=3D"http://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gi=
+f" alt=3D"space" width=3D"1" height=3D"20" style=3D"border: none;">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td ali=
+gn=3D"left" valign=3D"top" style=3D"font-family: Georgia, Arial, Helvetica,=
+ sans-serif; font-size: 18px; line-height: 20px; font-weight: bold; font-st=
+yle: italic; color:#f67033;">
+                                                                        Cor=
+dialement,
+                                                                    </td>
+                                                                </tr> =20
+                                                                <tr>
+                                                                    <td ali=
+gn=3D"left" valign=3D"top" height=3D"25" style=3D"font-size:0px; line-heigh=
+t:0px;">
+                                                                        <im=
+g src=3D"http://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gi=
+f" alt=3D"space" width=3D"1" height=3D"25" style=3D"border: none;">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td ali=
+gn=3D"left" valign=3D"top" style=3D"font-family: Helvetica, Verdana, Geneva=
+, sans-serif; font-size: 16px; line-height: 20px; font-weight: bold; color:=
+#f67033;">
+                                                                        Ste=
+ve Gaspoz
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td ali=
+gn=3D"left" valign=3D"top" style=3D"font-family: Helvetica, Verdana, Geneva=
+, sans-serif; font-size: 16px; line-height: 20px; font-weight: normal; colo=
+r:#f67033;">
+                                                                        Dir=
+ecteur de la r=C3=A9daction
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td ali=
+gn=3D"left" valign=3D"top">
+                                                                        <ta=
+ble cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+                                                                           =
+ <tr>
+                                                                           =
+     <td align=3D"left" valign=3D"middle" height=3D"20" style=3D"font-size:=
+ 0px; line-height: 0px;">
+                                                                           =
+         <img src=3D"http://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/=
+twitter_small.jpg" width=3D"15" style=3D"border: none;">
+                                                                           =
+     </td>
+                                                                           =
+     <td align=3D"left" valign=3D"top" width=3D"3" style=3D"font-size:0px; =
+line-height:0px;">
+                                                                           =
+         <img src=3D"http://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/=
+space_1x1.gif" alt=3D"space" width=3D"3" height=3D"1" style=3D"border: none=
+;">
+                                                                           =
+     </td>
+                                                                           =
+     <td align=3D"left" valign=3D"top" style=3D"font-family: Georgia, Arial=
+, Helvetica, sans-serif; font-size: 18px; line-height: 20px; font-weight: n=
+ormal; font-style: italic; color:#55acee;">
+                                                                           =
+         <a href=3D"http://www.twitter.com/migrosmagazine">migrosmagazine</=
+a>
+                                                                           =
+     </td>
+                                                                           =
+ </tr>
+                                                                        </t=
+able>
+                                                                    </td>
+                                                                </tr>      =
+     =20
+                                                            </table>
+                                                        </th>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td align=3D"left" valign=3D"to=
+p" width=3D"20" class=3D"mobileWidth10" style=3D"font-size:0px; line-height=
+:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"20" height=3D"1" style=3D"border: none;">
+                                            </td>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%">
+    <tr>
+        <td align=3D"left" valign=3D"top" height=3D"20" style=3D"font-size:=
+0px; line-height:0px;">
+            <img src=3D"http://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZad=
+Pk/space_1x1.gif" alt=3D"space" width=3D"1" height=3D"20" style=3D"border: =
+none;">
+        </td>
+    </tr>
+</table>
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%">
+                            <tr>
+                                <td align=3D"left" valign=3D"top" style=3D"=
+line-height: 0px; font-size: 0px;">
+                                    <a href=3D"http://nl.migrosmagazine.ch/=
+dispatcher/service?kh=3D180924094824470636&l=3Dfr&o=3D0&a=3D121809271800557=
+33304" target=3D"_blank">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+mailing_storage/2018/09/24/180924094824260621/180924094824380626_fr.jpg" wi=
+dth=3D"100%" style=3D"border: none;"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top">
+                                    <table cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0" style=3D"background-color:#FFFFFF;">
+                                        <tr>
+                                            <td align=3D"left" valign=3D"to=
+p" height=3D"20" style=3D"font-size:0px; line-height:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"1" height=3D"20" style=3D"border: none;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align=3D"left" valign=3D"to=
+p">
+                                                <table cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0">
+                                                    <tr>
+                                                        <td align=3D"left" =
+valign=3D"top" width=3D"25" class=3D"mobileWidth10" style=3D"font-size:0px;=
+ line-height:0px;">
+                                                            <img src=3D"htt=
+p://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"sp=
+ace" width=3D"25" height=3D"1" style=3D"border: none;">
+                                                        </td>
+                                                        <td align=3D"left" =
+valign=3D"top">
+                                                            <table cellspac=
+ing=3D"0" cellpadding=3D"0" border=3D"0">
+                                                               =20
+                                                                <tr>
+                                                                    <td ali=
+gn=3D"center" valign=3D"top" style=3D"font-family: Georgia, Arial, Helvetic=
+a, sans-serif; font-size: 40px; line-height: 44px; font-weight: bold; color=
+:#000000;">
+                                                                        Reb=
+elles sur roulettes
+                                                                    </td>
+                                                                </tr>
+                                                               =20
+
+                                                               =20
+                                                                <tr>
+                                                                    <td ali=
+gn=3D"center" valign=3D"top" style=3D"font-family: Georgia, Arial, Helvetic=
+a, sans-serif; font-size: 40px; line-height: 44px; color:#000000;">
+                                                                        Ven=
+u d'outre-Atlantique, le <strong>derby roller</strong> est un nouveau sport=
+ =C3=A0 la fois funky et guerrier.
+                                                                    </td>
+                                                                </tr>
+                                                                =20
+                                                            </table>
+                                                        </td>
+                                                        <td align=3D"left" =
+valign=3D"top" width=3D"25" class=3D"mobileWidth10" style=3D"font-size:0px;=
+ line-height:0px;">
+                                                            <img src=3D"htt=
+p://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"sp=
+ace" width=3D"25" height=3D"1" style=3D"border: none;">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>                 =20
+                                        <tr>
+                                            <td align=3D"left" valign=3D"to=
+p" height=3D"10" style=3D"font-size:0px; line-height:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"1" height=3D"10" style=3D"border: none;">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align=3D"center" valign=3D"=
+top">
+                                                <table cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0" style=3D"border: 2px solid #f67033;">
+                                                    <tr>
+                                                        <td align=3D"left" =
+valign=3D"top" width=3D"30" class=3D"mobileWidth10" style=3D"font-size:0px;=
+ line-height:0px;">
+                                                            <img src=3D"htt=
+p://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"sp=
+ace" width=3D"10" height=3D"1" style=3D"border: none;">
+                                                        </td>
+                                                        <td align=3D"center=
+" valign=3D"middle" height=3D"35" style=3D"font-family: Helvetica, Verdana,=
+ Geneva, sans-serif; font-size: 14px; line-height: 14px; color:#f67033;">
+                                                            <a href=3D"http=
+://nl.migrosmagazine.ch/dispatcher/service?kh=3D180924094824470636&l=3Dfr&o=
+=3D1&a=3D12180927180055733304" target=3D"_blank" style=3D"font-family: Helv=
+etica, Verdana, Geneva, sans-serif; font-size: 14px; line-height: 14px; col=
+or:#f67033; text-decoration: none;">
+                                                            <strong>Lire l=
+=E2=80=99article</strong>
+                                                            </a>
+                                                        </td>
+                                                        <td align=3D"left" =
+valign=3D"top" width=3D"30" class=3D"mobileWidth10" style=3D"font-size:0px;=
+ line-height:0px;">
+                                                            <img src=3D"htt=
+p://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"sp=
+ace" width=3D"30" height=3D"1" style=3D"border: none;">
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align=3D"left" valign=3D"to=
+p" height=3D"20" style=3D"font-size:0px; line-height:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"1" height=3D"20" style=3D"border: none;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table><table cellspacing=3D"0" cellpadding=3D"0" =
+border=3D"0" width=3D"100%">
+    <tr>
+        <td align=3D"left" valign=3D"top" height=3D"20" style=3D"font-size:=
+0px; line-height:0px;">
+            <img src=3D"http://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZad=
+Pk/space_1x1.gif" alt=3D"space" width=3D"1" height=3D"20" style=3D"border: =
+none;">
+        </td>
+    </tr>
+</table>
+
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"background-color: #FFFFFF;">
+    <tr>       =20
+        <th align=3D"left" valign=3D"top" class=3D"column">
+            <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+                <tr>
+                    <td align=3D"left" valign=3D"top" style=3D"font-size:0p=
+x; line-height: 0px;">
+                        <a href=3D"http://nl.migrosmagazine.ch/dispatcher/s=
+ervice?kh=3D180924094824540646&l=3Dfr&o=3D0&a=3D12180927180055733304" targe=
+t=3D"_blank">
+                            <img src=3D"http://ni.migrosmagazin.ch/mailing_=
+storage/2018/09/24/180924094824260621/180924094824510638_fr.jpg" width=3D"3=
+00" class=3D"width100" style=3D"border: none;">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </th>
+        <td align=3D"left" valign=3D"top" width=3D"20" class=3D"hide" style=
+=3D"font-size:0px; line-height:0px;">
+            <img src=3D"http://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZad=
+Pk/space_1x1.gif" alt=3D"space" width=3D"20" height=3D"1" style=3D"border: =
+none;">
+        </td>
+        <th align=3D"left" valign=3D"top" class=3D"column" style=3D"font-we=
+ight: normal;">
+            <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=
+=3D"280" class=3D"width100">
+                <tr>
+                    <td align=3D"left" valign=3D"top">
+                        <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%">
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top" class=3D"=
+mobilePaddingLeft20" style=3D"font-family:Helvetica, Verdana, Geneva, sans-=
+serif; font-size: 20px; line-height: 22px; color: #000000;">
+                                    A Gen=C3=A8ve, red=C3=A9couvrez =C3=A0 =
+v=C3=A9lo la vie de <strong>Ferdinand Hodler.</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top" class=3D"=
+mobilePaddingLeft20">
+                                    <table cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0" style=3D"border: 2px solid #f67033;">
+                                        <tr>
+                                            <td align=3D"left" valign=3D"to=
+p" width=3D"30" style=3D"font-size:0px; line-height:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"10" height=3D"1" style=3D"border: none;">
+                                            </td>
+                                            <td align=3D"left" valign=3D"mi=
+ddle" height=3D"35" style=3D"font-family:Helvetica, Verdana, Geneva, sans-s=
+erif; font-size: 14px; line-height: 14px; color:#f67033;">
+                                                <a href=3D"http://nl.migros=
+magazine.ch/dispatcher/service?kh=3D180924094824540646&l=3Dfr&o=3D1&a=3D121=
+80927180055733304" target=3D"_blank" style=3D"font-family:Helvetica, Verdan=
+a, Geneva, sans-serif; font-size: 14px; line-height: 14px; color:#f67033; t=
+ext-decoration: none;">
+                                                <strong>Lire l=E2=80=99arti=
+cle</strong>
+                                                </a>
+                                            </td>
+                                            <td align=3D"left" valign=3D"to=
+p" width=3D"30"  style=3D"font-size:0px; line-height:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"30" height=3D"1" style=3D"border: none;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td align=3D"left" valign=3D"top" width=3D"40" class=3D=
+"mobileWidth10" style=3D"font-size:0px; line-height:0px;">
+                        <img src=3D"http://ni.migrosmagazin.ch/gallery/kIA0=
+sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"40" height=3D"1" style=
+=3D"border: none;">
+                    </td>
+                </tr>
+            </table>
+        </th>
+    </tr>
+</table>
+                           <table cellspacing=3D"0" cellpadding=3D"0" borde=
+r=3D"0" width=3D"100%">
+    <tr>
+        <td align=3D"left" valign=3D"top" height=3D"20" style=3D"font-size:=
+0px; line-height:0px;">
+            <img src=3D"http://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZad=
+Pk/space_1x1.gif" alt=3D"space" width=3D"1" height=3D"20" style=3D"border: =
+none;">
+        </td>
+    </tr>
+</table>
+
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"background-color: #FFFFFF;">
+    <tr>       =20
+        <th align=3D"left" valign=3D"top" class=3D"column">
+            <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+                <tr>
+                    <td align=3D"left" valign=3D"top" style=3D"font-size:0p=
+x; line-height: 0px;">
+                        <a href=3D"http://nl.migrosmagazine.ch/dispatcher/s=
+ervice?kh=3D180924094824590656&l=3Dfr&o=3D0&a=3D12180927180055733304" targe=
+t=3D"_blank">
+                            <img src=3D"http://ni.migrosmagazin.ch/mailing_=
+storage/2018/09/24/180924094824260621/180924094824560648_fr.jpg" width=3D"3=
+00" class=3D"width100" style=3D"border: none;">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </th>
+        <td align=3D"left" valign=3D"top" width=3D"20" class=3D"hide" style=
+=3D"font-size:0px; line-height:0px;">
+            <img src=3D"http://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZad=
+Pk/space_1x1.gif" alt=3D"space" width=3D"20" height=3D"1" style=3D"border: =
+none;">
+        </td>
+        <th align=3D"left" valign=3D"top" class=3D"column" style=3D"font-we=
+ight: normal;">
+            <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=
+=3D"280" class=3D"width100">
+                <tr>
+                    <td align=3D"left" valign=3D"top">
+                        <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%">
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top" class=3D"=
+mobilePaddingLeft20" style=3D"font-family:Helvetica, Verdana, Geneva, sans-=
+serif; font-size: 20px; line-height: 22px; color: #000000;">
+                                    Faire parler <strong>le corps de b=C3=
+=A9b=C3=A9, </strong>une m=C3=A9thode originale pour identifier les probl=
+=C3=A8mes des petits.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top" class=3D"=
+mobilePaddingLeft20">
+                                    <table cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0" style=3D"border: 2px solid #f67033;">
+                                        <tr>
+                                            <td align=3D"left" valign=3D"to=
+p" width=3D"30" style=3D"font-size:0px; line-height:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"10" height=3D"1" style=3D"border: none;">
+                                            </td>
+                                            <td align=3D"left" valign=3D"mi=
+ddle" height=3D"35" style=3D"font-family:Helvetica, Verdana, Geneva, sans-s=
+erif; font-size: 14px; line-height: 14px; color:#f67033;">
+                                                <a href=3D"http://nl.migros=
+magazine.ch/dispatcher/service?kh=3D180924094824590656&l=3Dfr&o=3D1&a=3D121=
+80927180055733304" target=3D"_blank" style=3D"font-family:Helvetica, Verdan=
+a, Geneva, sans-serif; font-size: 14px; line-height: 14px; color:#f67033; t=
+ext-decoration: none;">
+                                                <strong>Lire l=E2=80=99arti=
+cle</strong>
+                                                </a>
+                                            </td>
+                                            <td align=3D"left" valign=3D"to=
+p" width=3D"30"  style=3D"font-size:0px; line-height:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"30" height=3D"1" style=3D"border: none;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td align=3D"left" valign=3D"top" width=3D"40" class=3D=
+"mobileWidth10" style=3D"font-size:0px; line-height:0px;">
+                        <img src=3D"http://ni.migrosmagazin.ch/gallery/kIA0=
+sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"40" height=3D"1" style=
+=3D"border: none;">
+                    </td>
+                </tr>
+            </table>
+        </th>
+    </tr>
+</table>
+                           <table cellspacing=3D"0" cellpadding=3D"0" borde=
+r=3D"0" width=3D"100%">
+    <tr>
+        <td align=3D"left" valign=3D"top" height=3D"20" style=3D"font-size:=
+0px; line-height:0px;">
+            <img src=3D"http://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZad=
+Pk/space_1x1.gif" alt=3D"space" width=3D"1" height=3D"20" style=3D"border: =
+none;">
+        </td>
+    </tr>
+</table>
+
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"background-color: #FFFFFF;">
+    <tr>       =20
+        <th align=3D"left" valign=3D"top" class=3D"column">
+            <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+                <tr>
+                    <td align=3D"left" valign=3D"top" style=3D"font-size:0p=
+x; line-height: 0px;">
+                        <a href=3D"http://nl.migrosmagazine.ch/dispatcher/s=
+ervice?kh=3D180924094824740676&l=3Dfr&o=3D0&a=3D12180927180055733304" targe=
+t=3D"_blank">
+                            <img src=3D"http://ni.migrosmagazin.ch/mailing_=
+storage/2018/09/24/180924094824260621/180924094824710668_fr.jpg" width=3D"3=
+00" class=3D"width100" style=3D"border: none;">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </th>
+        <td align=3D"left" valign=3D"top" width=3D"20" class=3D"hide" style=
+=3D"font-size:0px; line-height:0px;">
+            <img src=3D"http://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZad=
+Pk/space_1x1.gif" alt=3D"space" width=3D"20" height=3D"1" style=3D"border: =
+none;">
+        </td>
+        <th align=3D"left" valign=3D"top" class=3D"column" style=3D"font-we=
+ight: normal;">
+            <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=
+=3D"280" class=3D"width100">
+                <tr>
+                    <td align=3D"left" valign=3D"top">
+                        <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%">
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top" class=3D"=
+mobilePaddingLeft20" style=3D"font-family:Helvetica, Verdana, Geneva, sans-=
+serif; font-size: 20px; line-height: 22px; color: #000000;">
+                                    A vos paniers: c'est le moment de r=C3=
+=A9colter pommes et poires... avec les conseils de <strong>Tom le Jardinier=
+.</strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top" class=3D"=
+mobilePaddingLeft20">
+                                    <table cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0" style=3D"border: 2px solid #f67033;">
+                                        <tr>
+                                            <td align=3D"left" valign=3D"to=
+p" width=3D"30" style=3D"font-size:0px; line-height:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"10" height=3D"1" style=3D"border: none;">
+                                            </td>
+                                            <td align=3D"left" valign=3D"mi=
+ddle" height=3D"35" style=3D"font-family:Helvetica, Verdana, Geneva, sans-s=
+erif; font-size: 14px; line-height: 14px; color:#f67033;">
+                                                <a href=3D"http://nl.migros=
+magazine.ch/dispatcher/service?kh=3D180924094824740676&l=3Dfr&o=3D1&a=3D121=
+80927180055733304" target=3D"_blank" style=3D"font-family:Helvetica, Verdan=
+a, Geneva, sans-serif; font-size: 14px; line-height: 14px; color:#f67033; t=
+ext-decoration: none;">
+                                                <strong>Voir la vid=C3=A9o<=
+/strong>
+                                                </a>
+                                            </td>
+                                            <td align=3D"left" valign=3D"to=
+p" width=3D"30"  style=3D"font-size:0px; line-height:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"30" height=3D"1" style=3D"border: none;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td align=3D"left" valign=3D"top" width=3D"40" class=3D=
+"mobileWidth10" style=3D"font-size:0px; line-height:0px;">
+                        <img src=3D"http://ni.migrosmagazin.ch/gallery/kIA0=
+sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"40" height=3D"1" style=
+=3D"border: none;">
+                    </td>
+                </tr>
+            </table>
+        </th>
+    </tr>
+</table>
+                           <table cellspacing=3D"0" cellpadding=3D"0" borde=
+r=3D"0" width=3D"100%">
+    <tr>
+        <td align=3D"left" valign=3D"top" height=3D"20" style=3D"font-size:=
+0px; line-height:0px;">
+            <img src=3D"http://ni.migrosmagazin.ch/gallery/kIA0sd4pRqK2KZad=
+Pk/space_1x1.gif" alt=3D"space" width=3D"1" height=3D"20" style=3D"border: =
+none;">
+        </td>
+    </tr>
+</table>
+
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"background-color: #FFE500;">
+    <tr>       =20
+        <th align=3D"left" valign=3D"top" class=3D"column">
+            <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+                <tr>
+                    <td align=3D"left" valign=3D"top" style=3D"font-size:0p=
+x; line-height: 0px;">
+                        <a href=3D"http://nl.migrosmagazine.ch/dispatcher/s=
+ervice?kh=3D180924094824680666&l=3Dfr&o=3D0&a=3D12180927180055733304" targe=
+t=3D"_blank">
+                            <img src=3D"http://ni.migrosmagazin.ch/mailing_=
+storage/2018/09/24/180924094824260621/180924094824640663_fr.jpg" width=3D"3=
+00" class=3D"width100" style=3D"border: none;">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </th>
+        <th align=3D"left" valign=3D"top" class=3D"column" style=3D"font-we=
+ight: normal;">
+            <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=
+=3D"300" class=3D"width100">
+                <tr>
+                    <td align=3D"left" valign=3D"top" width=3D"40" class=3D=
+"mobileWidth10" style=3D"font-size:0px; line-height:0px;">
+                        <img src=3D"http://ni.migrosmagazin.ch/gallery/kIA0=
+sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"40" height=3D"1" style=
+=3D"border: none;">
+                    </td>
+                    <td align=3D"left" valign=3D"top">
+                        <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%">
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"font-family: Helvetica, Verdana, Geneva, sans-serif; font-size: 20px; l=
+ine-height: 22px; color: #000000;">
+                                    Gagnez un bon d=E2=80=99achat Migros d=
+=E2=80=99une valeur de <strong>50 francs! </strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top">
+                                    <table cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0" style=3D"border: 2px solid #f67033;">
+                                        <tr>
+                                            <td align=3D"left" valign=3D"to=
+p" width=3D"30" class=3D"mobileWidth10" style=3D"font-size:0px; line-height=
+:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"10" height=3D"1" style=3D"border: none;">
+                                            </td>
+                                            <td align=3D"center" valign=3D"=
+middle" height=3D"35" style=3D"font-family: Helvetica, Verdana, Geneva, san=
+s-serif; font-size: 14px; line-height: 14px; color:#f67033;">
+                                                <a href=3D"http://nl.migros=
+magazine.ch/dispatcher/service?kh=3D180924094824680666&l=3Dfr&o=3D1&a=3D121=
+80927180055733304" target=3D"_blank" style=3D"font-family: Helvetica, Verda=
+na, Geneva, sans-serif; font-size: 14px; line-height: 14px; color:#f67033; =
+text-decoration: none;">
+                                                <strong>Jouer</strong>
+                                                </a>
+                                            </td>
+                                            <td align=3D"left" valign=3D"to=
+p" width=3D"30" class=3D"mobileWidth10" style=3D"font-size:0px; line-height=
+:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"30" height=3D"1" style=3D"border: none;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td align=3D"left" valign=3D"top" width=3D"40" class=3D=
+"mobileWidth10" style=3D"font-size:0px; line-height:0px;">
+                        <img src=3D"http://ni.migrosmagazin.ch/gallery/kIA0=
+sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"40" height=3D"1" style=
+=3D"border: none;">
+                    </td>
+                </tr>
+            </table>
+        </th>
+    </tr>
+</table>
+                          =20
+
+                        <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%">
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"50" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"50" style=3D"border: none;">
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%">
+                            <tr>
+                                <td align=3D"center" valign=3D"top">
+                                    <table cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0">
+                                        <tr>
+                                            <td align=3D"left" valign=3D"to=
+p" style=3D"font-size:0px; line-height: 0px;">
+                                                <a href=3D"http://nl.migros=
+magazine.ch/dispatcher/service?kh=3D180924094825120722&l=3Dfr&o=3D0&a=3D121=
+80927180055733304" target=3D"_blank">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/twitter.jpg" width=3D"50" style=3D"b=
+order: none;">
+                                                </a>
+                                            </td>
+                                            <td align=3D"left" valign=3D"to=
+p" width=3D"30" style=3D"font-size:0px; line-height:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"30" height=3D"1" style=3D"border: none;">
+                                            </td>
+                                            <td align=3D"left" valign=3D"to=
+p" style=3D"font-size:0px; line-height: 0px;">
+                                                <a href=3D"http://nl.migros=
+magazine.ch/dispatcher/service?kh=3D180924094825130724&l=3Dfr&o=3D0&a=3D121=
+80927180055733304" target=3D"_blank">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/instagramm.jpg" width=3D"50" style=
+=3D"border: none;">
+                                                </a>
+                                            </td>
+                                            <td align=3D"left" valign=3D"to=
+p" width=3D"30" style=3D"font-size:0px; line-height:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"30" height=3D"1" style=3D"border: none;">
+                                            </td>
+                                            <td align=3D"left" valign=3D"to=
+p" style=3D"font-size:0px; line-height: 0px;">
+                                                <a href=3D"http://nl.migros=
+magazine.ch/dispatcher/service?kh=3D180924094825140726&l=3Dfr&o=3D0&a=3D121=
+80927180055733304" target=3D"_blank">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/facebook.jpg" width=3D"50" style=3D"=
+border: none;">
+                                                </a>
+                                            </td>
+                                            <td align=3D"left" valign=3D"to=
+p" width=3D"30" style=3D"font-size:0px; line-height:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"30" height=3D"1" style=3D"border: none;">
+                                            </td>
+                                            <td align=3D"left" valign=3D"to=
+p" style=3D"font-size:0px; line-height: 0px;">
+                                                <a href=3D"#" target=3D"_bl=
+ank">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/share.jpg" width=3D"50" style=3D"bor=
+der: none;">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%">
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"20" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"20" style=3D"border: none;">
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%">
+                            <tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"font-family: Helvetica; font-size: 16px; line-height: 16px; font-weight=
+: bold; color: #000000;">
+                                    <a href=3D"http://nl.migrosmagazine.ch/=
+dispatcher/service?kh=3D180924094825170730&l=3Dfr&o=3D0&a=3D121809271800557=
+33304" target=3D"_blank" style=3D"border: none; font-family: Arial, Helveti=
+ca, sans-serif; font-size: 16px; line-height: 16px; font-weight: bold; text=
+-decoration: none; color: #000000;">
+                                        www.migrosmagazine.ch
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"10" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"10" style=3D"border: none;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"center" valign=3D"top" style=
+=3D"font-family: Helvetica; font-size: 16px; line-height: 16px; color: #000=
+000;">
+                                    <a href=3D"http://nl.migrosmagazine.ch/=
+dispatcher/service?ac=3Dunsub&u=3D0&m=3D12180927180055733304&si=3D361255322=
+270386139" target=3D"_blank" style=3D"border: none; font-family:Helvetica; =
+font-size: 16px; line-height: 16px; color: #000000;">
+                                        R=C3=A9silier la newsletter
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"10" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"10" style=3D"border: none;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align=3D"left" valign=3D"top">
+                                    <table cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0">
+                                        <tr>
+                                            <td align=3D"left" valign=3D"to=
+p" width=3D"40" class=3D"mobileWidth10" style=3D"font-size:0px; line-height=
+:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"40" height=3D"1" style=3D"border: none;">
+                                            </td>
+                                            <td align=3D"center" valign=3D"=
+top" style=3D"font-family: Helvetica; font-size: 16px; line-height: 16px;">
+                                                 =C2=A9 2018 F=C3=A9d=C3=A9=
+ration des coop=C3=A9ratives Migros <br><br>Avec votre consentement, nous v=
+ous informons r=C3=A9guli=C3=A8rement sur les th=C3=A8mes actuels de Migros=
+ Magazine. Nous ne pouvons malheureusement pas totalement exclure certaines=
+ indications erron=C3=A9es et nous vous remercions d=E2=80=99avance de votr=
+e compr=C3=A9hension. Ces indications ne peuvent pas =C3=AAtre consid=C3=A9=
+r=C3=A9es comme contractuelles.=20
+                                            </td>
+                                            <td align=3D"left" valign=3D"to=
+p" width=3D"40" class=3D"mobileWidth10" style=3D"font-size:0px; line-height=
+:0px;">
+                                                <img src=3D"http://ni.migro=
+smagazin.ch/gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=
+=3D"40" height=3D"1" style=3D"border: none;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                                       =20
+                        </table>
+
+                        <table cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%">
+                            <tr>
+                                <td align=3D"left" valign=3D"top" height=3D=
+"50" style=3D"font-size:0px; line-height:0px;">
+                                    <img src=3D"http://ni.migrosmagazin.ch/=
+gallery/kIA0sd4pRqK2KZadPk/space_1x1.gif" alt=3D"space" width=3D"1" height=
+=3D"50" style=3D"border: none;">
+                                </td>
+                            </tr>
+                        </table>
+
+
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<img src=3D"http://ni.migrosmagazin.ch/_xp_mo_12180927180055733304.gif" wid=
+th=3D"1" height=3D"1" alt=3D"" border=3D"0"></body>
+</html>
+
+------=_Part_54456_550841149.1538064122432--

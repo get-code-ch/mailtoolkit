@@ -11,8 +11,11 @@ const cross = "\u271A"
 
 const file1 = "./files/test_multipart_complex.eml"
 const file2 = "./files/test_nonmime.eml"
+const file3 = "./files/test_multipart.eml"
 
 func TestParse(t *testing.T) {
+
+	// Test complex (nested) multipart mail
 	buffer1, err := ioutil.ReadFile(file1)
 	if err != nil {
 		t.Fatal("Error opening test file:", err)
@@ -20,10 +23,13 @@ func TestParse(t *testing.T) {
 	t.Logf("Testing mail parse %s", file1)
 	{
 		mail := Parse(buffer1)
-		for i, e := range mail.Contents {
-			t.Logf("%d part of mail content:\n%v", i, string(e.Data[:200]))
+		for key, content := range mail.Contents {
+			if content.Data != nil {
+				t.Logf("%s part of mail content:\n%v", key, string(content.Data[:200]))
+			}
 		}
 	}
+	// Test non MIME mail
 	buffer2, err := ioutil.ReadFile(file2)
 	if err != nil {
 		t.Fatal("Error opening test file:", err)
@@ -31,6 +37,24 @@ func TestParse(t *testing.T) {
 	t.Logf("Testing mail parse %s", file2)
 	{
 		mail := Parse(buffer2)
-		t.Logf("RAW mail content:\n%v", string(mail.Contents[0].Data))
+		for key, content := range mail.Contents {
+			if content.Data != nil {
+				t.Logf("%s part of mail content:\n%v", key, string(content.Data[:200]))
+			}
+		}
+	}
+
+	buffer3, err := ioutil.ReadFile(file3)
+	if err != nil {
+		t.Fatal("Error opening test file:", err)
+	}
+	t.Logf("Testing mail parse %s", file3)
+	{
+		mail := Parse(buffer3)
+		for key, content := range mail.Contents {
+			if content.Data != nil {
+				t.Logf("%s part of mail content:\n%v", key, string(content.Data[:200]))
+			}
+		}
 	}
 }

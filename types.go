@@ -1,8 +1,10 @@
 package mailtoolkit
 
+import "regexp"
+
 type Mail struct {
 	Header      Header
-	Contents    []Content
+	Contents    map[string]Content
 	Attachments map[string]Attachment
 }
 
@@ -21,7 +23,7 @@ type Header struct {
 type Content struct {
 	ContentInfo ContentInfo
 	Data        []byte
-	Attachments map[string]Attachment
+	Contents    map[string]Content
 }
 
 type Attachment struct {
@@ -48,5 +50,11 @@ type ContentDisposition struct {
 	Parameters map[string]string
 }
 
+// Global variable
+
 var MIMEContentTypes = []string{"application", "audio", "image", "multipart", "text", "video"}
 var MIMEContentDispositionTypes = []string{"inline", "attachment"}
+
+var firstLineRegex = regexp.MustCompile(`(?m)(^[\n|\n\r]?$)`)
+var headerRegex = regexp.MustCompile(`(?mi)(^[\w_-]+)(?::\s+"?)(.*)(?:\r?\n)((?:\s*(?:\s+).*(?:\r?\n+))*)`)
+var whitespaceRegex = regexp.MustCompile(`[ ]{2,}|[\t|\0|\n|\r]+`)
