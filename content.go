@@ -59,11 +59,9 @@ func ParseContents(buffer []byte, contentInfo ContentInfo, contentID *int) (map[
 			c = rawContent[start:end]
 			nc, a := ParseContents(c, ci, contentID)
 			attachment = a
-			//contents[strconv.Itoa(*contentID)] = Content{ci, c, nc}
 			for k, v := range nc {
 				contents[k] = v
 			}
-			*contentID += 1
 		} else {
 			ci = contentInfo
 			c = rawContent[start:end]
