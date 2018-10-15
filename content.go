@@ -68,8 +68,12 @@ func ParseContents(buffer []byte, contentInfo ContentInfo, contentID *int) (map[
 			if ci.Disposition.Type == "attachment" {
 				attachment[ci.Disposition.Parameters["filename"]] = Attachment{ci, c}
 			} else {
-				contents[strconv.Itoa(*contentID)] = Content{ci, c, nil}
-				*contentID += 1
+				if ci.ID != "" {
+					contents[ci.ID] = Content{ci, c, nil}
+				} else {
+					contents[strconv.Itoa(*contentID)] = Content{ci, c, nil}
+					*contentID += 1
+				}
 			}
 		}
 	}
