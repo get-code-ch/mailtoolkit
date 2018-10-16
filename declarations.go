@@ -57,4 +57,13 @@ var MIMEContentDispositionTypes = []string{"inline", "attachment"}
 
 var firstLineRegex = regexp.MustCompile(`(?m)(^[\n|\n\r]?$)`)
 var headerRegex = regexp.MustCompile(`(?mi)(^[\w_-]+)(?::\s+"?)(.*)(?:\r?\n)((?:\s*(?:\s+).*(?:\r?\n+))*)`)
+var parametersRegex = regexp.MustCompile(`(?i)^(?:\s*)([\w-]+)(?:\s*=\s*"?)(.*[^"])(?:"?\s*)$`)
 var whitespaceRegex = regexp.MustCompile(`[ ]{2,}|[\t|\0|\n|\r]+`)
+var removeQuotesRegex = regexp.MustCompile(`^([<|"|']?)+|([[>|"|']?)+[\r|\n|\s]+$`)
+var contentTransferEncodingRegex = regexp.MustCompile(`(?mi)(?:^\s*Content-Transfer-Encoding:\s+"?)(.*)(?:"?\n?)`)
+var contentIDRegex = regexp.MustCompile(`(?mi)(?:^\s*Content-ID:\s+"?)(.*)(?:"?\n?)`)
+var contentDescriptionRegex = regexp.MustCompile(`(?mi)(?:^\s*Content-Description:\s+"?)(.*)(?:"?\n?)`)
+var contentTypeRegex = regexp.MustCompile(`(?im)(?:^Content-Type: ?)(.+)(?:\r?\n)((?:\s*(?:\s+).*(?:\r?\n+))*)`)
+var contentDispositionRegex = regexp.MustCompile(`(?im)(?:^Content-Disposition: ?)(.+)(?:\r?\n)((?:\s*(?:\s+).*(?:\r?\n+))*)`)
+var semiColonRegex = regexp.MustCompile(`;`)
+var slashRegex = regexp.MustCompile(`/`)

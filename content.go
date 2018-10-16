@@ -79,7 +79,3 @@ func ParseContents(buffer []byte, contentInfo ContentInfo, contentID *int) (map[
 	}
 	return contents, attachment
 }
-
-func extractContent(buffer []byte, contentInfo ContentInfo) Content {
-	return Content{}
-}

@@ -1,7 +1,6 @@
 package mailtoolkit
 
 import (
-	"regexp"
 	"strings"
 )
 
@@ -12,8 +11,7 @@ func getContentInfo(buffer []byte) ContentInfo {
 	contentInfo.Disposition.Parameters = make(map[string]string)
 
 	// Get End of Header (blank line)
-	re := regexp.MustCompile(`(?m)(^[\n|\n\r]?$)`)
-	end := re.FindIndex(buffer)[0]
+	end := firstLineRegex.FindIndex(buffer)[0]
 
 	// Get Attachments-Type
 	contentInfo.Type = getContentType(buffer[:end])
@@ -22,23 +20,20 @@ func getContentInfo(buffer []byte) ContentInfo {
 	contentInfo.Disposition = getContentDisposition(buffer[:end])
 
 	// Get Attachments-Transfer-Encoding Attachments-Transfer-Encoding:
-	re = regexp.MustCompile(`(?mi)(?:^\s*Content-Transfer-Encoding:\s+"?)(.*)(?:"?\n?)`)
-	match = re.FindSubmatch(buffer[:end])
+	match = contentTransferEncodingRegex.FindSubmatch(buffer[:end])
 	if match != nil {
-		contentInfo.TransferEncoding = string(match[1])
+		contentInfo.TransferEncoding = removeQuotesRegex.ReplaceAllString(string(match[1]), ``)
 	}
 
 	// Get Attachments-ID
-	re = regexp.MustCompile(`(?mi)(?:^\s*Content-ID:\s+"?)(.*)(?:"?\n?)`)
-	match = re.FindSubmatch(buffer[:end])
+	match = contentIDRegex.FindSubmatch(buffer[:end])
 	if match != nil {
-		contentInfo.ID = string(match[1])
+		contentInfo.ID = removeQuotesRegex.ReplaceAllString(string(match[1]), ``)
 	}
 	// Get Attachments-Description
-	re = regexp.MustCompile(`(?mi)(?:^\s*Content-Description:\s+"?)(.*)(?:"?\n?)`)
-	match = re.FindSubmatch(buffer[:end])
+	match = contentDescriptionRegex.FindSubmatch(buffer[:end])
 	if match != nil {
-		contentInfo.Description = string(match[1])
+		contentInfo.Description = removeQuotesRegex.ReplaceAllString(string(match[1]), ``)
 	}
 
 	return contentInfo
@@ -50,8 +45,7 @@ func getContentType(buffer []byte) ContentType {
 	wrkCT := "" // working content-type string
 
 	// Find Attachments-Type
-	re := regexp.MustCompile(`(?im)(?:^Content-Type: ?)(.+)(?:\r?\n)((?:\s*(?:\s+).*(?:\r?\n+))*)`)
-	wrkBuffer := re.FindSubmatch(buffer)
+	wrkBuffer := contentTypeRegex.FindSubmatch(buffer)
 	// If Attachments-Type is not found we assume content type is Text/plain (non MIME email) rest of datas are nil
 	if wrkBuffer == nil {
 		contentType.Type = "text"
@@ -62,23 +56,19 @@ func getContentType(buffer []byte) ContentType {
 	for _, wb := range wrkBuffer[1:] {
 		wrkCT += string(wb)
 	}
-	re = regexp.MustCompile(`[ ]{2,}|[\t|\0|\n|\r]+`)
-	wrkCT = re.ReplaceAllString(wrkCT, ``)
+	wrkCT = whitespaceRegex.ReplaceAllString(wrkCT, ``)
 
 	//Extract parameters to a slice
-	re = regexp.MustCompile(`;`)
-	parameters := re.Split(wrkCT, -1)
+	parameters := semiColonRegex.Split(wrkCT, -1)
 
 	// Get Attachments Type and Subtype
-	re = regexp.MustCompile(`/`)
-	se := re.Split(parameters[0], -1)
+	se := slashRegex.Split(parameters[0], -1)
 	contentType.Type = se[0]
 	contentType.Subtype = se[1]
 
 	// Get Parameters
 	for _, param := range parameters[1:] {
-		re = regexp.MustCompile(`(?i)^(?:\s*)([\w-]+)(?:\s*=\s*"?)(.*[^"])(?:"?\s*)$`)
-		se = re.FindStringSubmatch(param)
+		se = parametersRegex.FindStringSubmatch(param)
 		if se != nil {
 			// Parameter attribute are normalized to lowercase
 			contentType.Parameters[strings.ToLower(se[1])] = se[2]
@@ -93,8 +83,7 @@ func getContentDisposition(buffer []byte) ContentDisposition {
 	wrkCD := "" // working content-disposition string
 
 	// Find Attachments-Type
-	re := regexp.MustCompile(`(?im)(?:^Content-Disposition: ?)(.+)(?:\r?\n)((?:\s*(?:\s+).*(?:\r?\n+))*)`)
-	wrkBuffer := re.FindSubmatch(buffer)
+	wrkBuffer := contentDispositionRegex.FindSubmatch(buffer)
 	// If Attachments-Type is not found we return empty structure
 	if wrkBuffer == nil {
 		return contentDisposition
@@ -103,22 +92,18 @@ func getContentDisposition(buffer []byte) ContentDisposition {
 	for _, wb := range wrkBuffer[1:] {
 		wrkCD += string(wb)
 	}
-	re = regexp.MustCompile(`[ ]{2,}|[\t|\0|\n|\r]+`)
-	wrkCD = re.ReplaceAllString(wrkCD, ``)
+	wrkCD = whitespaceRegex.ReplaceAllString(wrkCD, ``)
 
 	//Extract parameters to a slice
-	re = regexp.MustCompile(`;`)
-	parameters := re.Split(wrkCD, -1)
+	parameters := semiColonRegex.Split(wrkCD, -1)
 
 	// Get Attachments Type and Subtype
-	re = regexp.MustCompile(`/`)
-	se := re.Split(parameters[0], -1)
+	se := slashRegex.Split(parameters[0], -1)
 	contentDisposition.Type = se[0]
 
 	// Get Parameters
 	for _, param := range parameters[1:] {
-		re = regexp.MustCompile(`(?i)^(?:\s*)([\w-]+)(?:\s*=\s*"?)(.*[^"])(?:"?\s*)$`)
-		se = re.FindStringSubmatch(param)
+		se = parametersRegex.FindStringSubmatch(param)
 		if se != nil {
 			// Parameter attribute are normalized to lowercase
 			contentDisposition.Parameters[strings.ToLower(se[1])] = se[2]
