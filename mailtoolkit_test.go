@@ -1,6 +1,7 @@
 package mailtoolkit
 
 import (
+	"encoding/json"
 	"io/ioutil"
 	"testing"
 )
@@ -12,19 +13,21 @@ const cross = "\u271A"
 const testFilesFolder = "./files/"
 
 func TestParse(t *testing.T) {
-	// Code coverage testing
-	files, err := ioutil.ReadDir(testFilesFolder)
+	buffer, err := ioutil.ReadFile("mailtoolkit_test.json")
 	if err != nil {
-		t.Fatal("Error opening test files folder", err)
+		t.Fatal("Error opening test directive:", err)
 	}
+	var directives []map[string]interface{}
+	json.Unmarshal([]byte(buffer), &directives)
 
-	for k, file := range files {
-		_ = k
-		buffer, err := ioutil.ReadFile(testFilesFolder + file.Name())
+	for idx := range directives {
+		directive := directives[idx]
+		filename := directive["filename"].(string)
+		buffer, err := ioutil.ReadFile(filename)
 		if err != nil {
 			t.Fatal("Error opening test file:", err)
 		}
-		t.Logf("Testing mail parse %s", file.Name())
+		t.Logf("Testing mail parse %s", filename)
 
 		mail := Parse(buffer)
 		for key, content := range mail.Contents {

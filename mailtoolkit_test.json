@@ -1,0 +1,9 @@
+[
+  {
+    "filename": "./files/test_header_field.eml",
+    "header": {
+      "From": "\"Claude Sample\" <info@mail.com>",
+      "To": "\"Claude Sample\" <claude@sample.com>"
+    }
+  }
+]
