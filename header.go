@@ -38,7 +38,7 @@ func ParseHeader(buffer []byte) Header {
 		header.From = e
 	}
 
-	e, ok = header.Elements["delivered-to"]
+	e, ok = header.Elements["to"]
 	if ok {
 		header.To = e
 	}

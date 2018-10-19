@@ -3,6 +3,7 @@ package mailtoolkit
 import (
 	"encoding/json"
 	"io/ioutil"
+	"reflect"
 	"testing"
 )
 
@@ -37,6 +38,15 @@ func TestParse(t *testing.T) {
 					l = 200
 				}
 				t.Logf("%s part of mail content:\n%v", key, string(content.Data[:l]))
+			}
+		}
+		header := directive["header"].(map[string]interface{})
+		for key, value := range header {
+			fieldValue := reflect.ValueOf(mail.Header).FieldByName(key).String()
+			if fieldValue != value {
+				t.Errorf("\t%v Error wrong value for %s, result is \"%v\" should be \"%v\"", ballotX, key, fieldValue, value)
+			} else {
+				t.Logf("\t%v Ok value for %s, match with \"%v\"", checkMark, key, value)
 			}
 		}
 	}
