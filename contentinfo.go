@@ -22,18 +22,18 @@ func getContentInfo(buffer []byte) ContentInfo {
 	// Get Attachments-Transfer-Encoding Attachments-Transfer-Encoding:
 	match = contentTransferEncodingRegex.FindSubmatch(buffer[:end])
 	if match != nil {
-		contentInfo.TransferEncoding = removeQuotesRegex.ReplaceAllString(string(match[1]), ``)
+		contentInfo.TransferEncoding = quotesRegex.ReplaceAllString(string(match[1]), ``)
 	}
 
 	// Get Attachments-ID
 	match = contentIDRegex.FindSubmatch(buffer[:end])
 	if match != nil {
-		contentInfo.ID = removeQuotesRegex.ReplaceAllString(string(match[1]), ``)
+		contentInfo.ID = quotesRegex.ReplaceAllString(string(match[1]), ``)
 	}
 	// Get Attachments-Description
 	match = contentDescriptionRegex.FindSubmatch(buffer[:end])
 	if match != nil {
-		contentInfo.Description = removeQuotesRegex.ReplaceAllString(string(match[1]), ``)
+		contentInfo.Description = quotesRegex.ReplaceAllString(string(match[1]), ``)
 	}
 
 	return contentInfo

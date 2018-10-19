@@ -1,0 +1,21 @@
+MIME-Version: 1.0
+Date: Fri, 19 Oct 2018 08:13:36 +0200
+Bcc: "Claude Sample" <claude@sample.ch>
+Message-ID: <CAKSN9=H2=CyRg9TFuLcvSkvZm4sbdTpcFW+kGVaSBp2FvmSCcA@mail.sample.com>
+Subject: Test message
+From: "Claude Sample" <info@mail.com>
+To: "Claude Sample" <claude@sample.com>
+Cc: claude@cc.ch
+Content-Type: multipart/alternative; boundary="000000000000f46d9d05788ed02f"
+
+--000000000000f46d9d05788ed02f
+Content-Type: text/plain; charset="UTF-8"
+
+Test message with field to, cc and bcc
+
+--000000000000f46d9d05788ed02f
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr">Test message with field to, cc and bcc</div>
+
+--000000000000f46d9d05788ed02f--

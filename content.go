@@ -69,9 +69,9 @@ func ParseContents(buffer []byte, contentInfo ContentInfo, contentID *int) (map[
 				attachment[ci.Disposition.Parameters["filename"]] = Attachment{ci, c}
 			} else {
 				if ci.ID != "" {
-					contents[ci.ID] = Content{ci, c, nil}
+					contents[ci.ID] = Content{ci, c}
 				} else {
-					contents[strconv.Itoa(*contentID)] = Content{ci, c, nil}
+					contents[strconv.Itoa(*contentID)] = Content{ci, c}
 					*contentID += 1
 				}
 			}

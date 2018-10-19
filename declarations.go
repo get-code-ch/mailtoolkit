@@ -13,7 +13,7 @@ type Header struct {
 	From        string
 	To          string
 	Cc          string
-	Cci         string
+	Bcc         string
 	Date        string
 	Subject     string
 	Elements    map[string]string
@@ -23,7 +23,6 @@ type Header struct {
 type Content struct {
 	ContentInfo ContentInfo
 	Data        []byte
-	Contents    map[string]Content
 }
 
 type Attachment struct {
@@ -59,7 +58,7 @@ var firstLineRegex = regexp.MustCompile(`(?m)(^[\n|\n\r]?$)`)
 var headerRegex = regexp.MustCompile(`(?mi)(^[\w_-]+)(?::\s+"?)(.*)(?:\r?\n)((?:\s*(?:\s+).*(?:\r?\n+))*)`)
 var parametersRegex = regexp.MustCompile(`(?i)^(?:\s*)([\w-]+)(?:\s*=\s*"?)(.*[^"])(?:"?\s*)$`)
 var whitespaceRegex = regexp.MustCompile(`[ ]{2,}|[\t|\0|\n|\r]+`)
-var removeQuotesRegex = regexp.MustCompile(`^([<|"|']?)+|([[>|"|']?)+[\r|\n|\s]+$`)
+var quotesRegex = regexp.MustCompile(`^([<|"|']?)+|([[>|"|']?)+[\r|\n|\s]+$`)
 var contentTransferEncodingRegex = regexp.MustCompile(`(?mi)(?:^\s*Content-Transfer-Encoding:\s+"?)(.*)(?:"?\n?)`)
 var contentIDRegex = regexp.MustCompile(`(?mi)(?:^\s*Content-ID:\s+"?)(.*)(?:"?\n?)`)
 var contentDescriptionRegex = regexp.MustCompile(`(?mi)(?:^\s*Content-Description:\s+"?)(.*)(?:"?\n?)`)
@@ -67,3 +66,4 @@ var contentTypeRegex = regexp.MustCompile(`(?im)(?:^Content-Type: ?)(.+)(?:\r?\n
 var contentDispositionRegex = regexp.MustCompile(`(?im)(?:^Content-Disposition: ?)(.+)(?:\r?\n)((?:\s*(?:\s+).*(?:\r?\n+))*)`)
 var semiColonRegex = regexp.MustCompile(`;`)
 var slashRegex = regexp.MustCompile(`/`)
+var cidRegex = regexp.MustCompile(`(?im)(?:cid:)((?:[^"]|\\")*)`)

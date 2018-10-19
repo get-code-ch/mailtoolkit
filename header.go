@@ -48,9 +48,9 @@ func ParseHeader(buffer []byte) Header {
 		header.Cc = e
 	}
 
-	e, ok = header.Elements["cci"]
+	e, ok = header.Elements["bcc"]
 	if ok {
-		header.Cci = e
+		header.Bcc = e
 	}
 
 	e, ok = header.Elements["subject"]
