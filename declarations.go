@@ -55,7 +55,7 @@ var MIMEContentTypes = []string{"application", "audio", "image", "multipart", "t
 var MIMEContentDispositionTypes = []string{"inline", "attachment"}
 
 var firstLineRegex = regexp.MustCompile(`(?m)(^[\n|\n\r]?$)`)
-var headerRegex = regexp.MustCompile(`(?mi)(^[\w_-]+)(?::\s+"?)(.*)(?:\r?\n)((?:\s*(?:\s+).*(?:\r?\n+))*)`)
+var headerRegex = regexp.MustCompile(`(?mi)(^[\w_-]+)(?::\s+)(.*)(?:\r?\n)((?:\s*(?:\s+).*(?:\r?\n+))*)`)
 var parametersRegex = regexp.MustCompile(`(?i)^(?:\s*)([\w-]+)(?:\s*=\s*"?)(.*[^"])(?:"?\s*)$`)
 var whitespaceRegex = regexp.MustCompile(`[ ]{2,}|[\t|\0|\n|\r]+`)
 var quotesRegex = regexp.MustCompile(`^([<|"|']?)+|([[>|"|']?)+[\r|\n|\s]+$`)
@@ -67,3 +67,4 @@ var contentDispositionRegex = regexp.MustCompile(`(?im)(?:^Content-Disposition: 
 var semiColonRegex = regexp.MustCompile(`;`)
 var slashRegex = regexp.MustCompile(`/`)
 var cidRegex = regexp.MustCompile(`(?im)(?:cid:)((?:[^"]|\\")*)`)
+var emailRegex = regexp.MustCompile(`(?i)(?:\<|\"|\x60|\')?([\w-\+\.]*@[a-z0-9][\w-\+\.]*)(?:\>|\"|\x60|\')?`)

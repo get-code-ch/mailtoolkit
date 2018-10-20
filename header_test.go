@@ -6,7 +6,7 @@ import (
 )
 
 func TestParseHeader(t *testing.T) {
-	buffer, err := ioutil.ReadFile("./files/test_multipart_complex.eml")
+	buffer, err := ioutil.ReadFile("./files/multipartcomplex.eml")
 	if err != nil {
 		t.Fatal("Error opening test file:", err)
 	}

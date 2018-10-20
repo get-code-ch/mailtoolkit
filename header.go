@@ -35,22 +35,27 @@ func ParseHeader(buffer []byte) Header {
 
 	e, ok := header.Elements["from"]
 	if ok {
-		header.From = e
+		header.From = emailRegex.FindStringSubmatch(e)[1]
 	}
 
 	e, ok = header.Elements["to"]
 	if ok {
-		header.To = e
+		header.To = emailRegex.FindStringSubmatch(e)[1]
+	} else {
+		e, ok = header.Elements["delivered-to"]
+		if ok {
+			header.To = emailRegex.FindStringSubmatch(e)[1]
+		}
 	}
 
 	e, ok = header.Elements["cc"]
 	if ok {
-		header.Cc = e
+		header.Cc = emailRegex.FindStringSubmatch(e)[1]
 	}
 
 	e, ok = header.Elements["bcc"]
 	if ok {
-		header.Bcc = e
+		header.Bcc = emailRegex.FindStringSubmatch(e)[1]
 	}
 
 	e, ok = header.Elements["subject"]

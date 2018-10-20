@@ -1,9 +1,39 @@
 [
   {
-    "filename": "./files/test_header_field.eml",
+    "filename": "./files/alldest.eml",
     "header": {
-      "From": "\"Claude Sample\" <info@mail.com>",
-      "To": "\"Claude Sample\" <claude@sample.com>"
-    }
+      "From": "info@mail.com",
+      "To": "claude@sample.com",
+      "Bcc": "claude@sample.ch",
+      "Cc": "claude@cc.ch",
+      "Subject": "Test message"
+    },
+    "content": false
+  },
+  {
+    "filename": "./files/nomime.eml",
+    "header": {
+      "From": "from@sample.com",
+      "To": "dest@sample.com",
+      "Subject": "test 2"
+    },
+    "content": false
+  },
+  {
+    "filename": "./files/multipart.eml",
+    "header": {
+      "From": "info@news.migrosmagazine.ch",
+      "To": "des@sample.ch"
+    },
+    "content": false
+  },
+  {
+    "filename": "./files/multipartcomplex.eml",
+    "header": {
+      "From": "info@theatreboulimie.com",
+      "To": "test@test.com"
+    },
+    "content": false
   }
+
 ]
