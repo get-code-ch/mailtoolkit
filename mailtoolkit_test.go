@@ -40,7 +40,7 @@ func TestParse(t *testing.T) {
 		mail := Parse(buffer)
 
 		// Check result
-		d := directive["content"]
+		d := directive["displaycontent"]
 		if d == nil {
 			displayContent = false
 		} else {
@@ -57,6 +57,21 @@ func TestParse(t *testing.T) {
 				}
 			}
 		}
+
+		contentInfo := directive["ContentInfo"]
+		contentType := map[string]interface{}{}
+		if contentInfo != nil {
+			contentType = contentInfo.(map[string]interface{})["Type"].(map[string]interface{})
+		}
+		for key, value := range contentType {
+			fieldValue := reflect.ValueOf(mail.Header.ContentInfo.Type).FieldByName(key).String()
+			if fieldValue != value {
+				t.Errorf("\t%v Error wrong value for %s, result is \"%v\" should be \"%v\"", ballotX, key, fieldValue, value)
+			} else {
+				t.Logf("\t%v Ok value for %s, match with \"%v\"", checkMark, key, value)
+			}
+		}
+
 		header := directive["header"].(map[string]interface{})
 		for key, value := range header {
 			fieldValue := reflect.ValueOf(mail.Header).FieldByName(key).String()

@@ -6,9 +6,15 @@
       "To": "claude@sample.com",
       "Bcc": "claude@sample.ch",
       "Cc": "claude@cc.ch",
-      "Subject": "Test message"
+      "Subject": "Test message",
+      "ContentInfo": {
+        "Type": {"Type": "multipart", "Subtype": "alternative"}
+      }
     },
-    "content": false
+    "contents": {
+
+    },
+    "displaycontent": false
   },
   {
     "filename": "./files/nomime.eml",
@@ -17,7 +23,7 @@
       "To": "dest@sample.com",
       "Subject": "test 2"
     },
-    "content": false
+    "displaycontent": false
   },
   {
     "filename": "./files/multipart.eml",
@@ -25,7 +31,7 @@
       "From": "info@news.migrosmagazine.ch",
       "To": "des@sample.ch"
     },
-    "content": false
+    "displaycontent": false
   },
   {
     "filename": "./files/multipartcomplex.eml",
@@ -33,7 +39,7 @@
       "From": "info@theatreboulimie.com",
       "To": "test@test.com"
     },
-    "content": false
+    "displaycontent": false
   }
 
 ]
