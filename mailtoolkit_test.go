@@ -58,22 +58,23 @@ func TestParse(t *testing.T) {
 			}
 		}
 
-		contentInfo := directive["ContentInfo"]
-		contentType := map[string]interface{}{}
-		if contentInfo != nil {
-			contentType = contentInfo.(map[string]interface{})["Type"].(map[string]interface{})
-		}
-		for key, value := range contentType {
-			fieldValue := reflect.ValueOf(mail.Header.ContentInfo.Type).FieldByName(key).String()
-			if fieldValue != value {
-				t.Errorf("\t%v Error wrong value for %s, result is \"%v\" should be \"%v\"", ballotX, key, fieldValue, value)
-			} else {
-				t.Logf("\t%v Ok value for %s, match with \"%v\"", checkMark, key, value)
-			}
-		}
-
+		// Check returned header of mail file
 		header := directive["header"].(map[string]interface{})
 		for key, value := range header {
+			if key == "ContentInfo" {
+				contentInfo := header[key].(map[string]interface{})["Type"].(map[string]interface{})
+				contentType := contentInfo["Type"]
+				contentSubtype := contentInfo["Subtype"]
+				mailType := reflect.ValueOf(mail.Header.ContentInfo.Type.Type).String()
+				mailSubtype := reflect.ValueOf(mail.Header.ContentInfo.Type.Subtype).String()
+				if contentType != mailType || contentSubtype != mailSubtype {
+					t.Errorf("\t%v Error wrong value for type/subtype, result is \"%s/%s\" should be \"%s/%s\"", ballotX, mailType, mailSubtype, contentType, contentSubtype)
+				} else {
+					t.Logf("\t%v Ok value for type/subtype, match with \"%s/%s\"", checkMark, mailType, mailSubtype)
+				}
+				continue
+			}
+			// Check fields of Header
 			fieldValue := reflect.ValueOf(mail.Header).FieldByName(key).String()
 			if fieldValue != value {
 				t.Errorf("\t%v Error wrong value for %s, result is \"%v\" should be \"%v\"", ballotX, key, fieldValue, value)

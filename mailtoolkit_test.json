@@ -21,7 +21,14 @@
     "header": {
       "From": "from@sample.com",
       "To": "dest@sample.com",
-      "Subject": "test 2"
+      "Subject": "test 2",
+      "ContentInfo": {
+        "Type": {
+          "Type": "text",
+          "Subtype": "plain"
+        }
+      }
+
     },
     "displaycontent": false
   },
@@ -29,7 +36,14 @@
     "filename": "./files/multipart.eml",
     "header": {
       "From": "info@news.migrosmagazine.ch",
-      "To": "des@sample.ch"
+      "To": "des@sample.ch",
+      "ContentInfo": {
+        "Type": {
+          "Type": "multipart",
+          "Subtype": "alternative"
+        }
+      }
+
     },
     "displaycontent": false
   },
@@ -37,7 +51,14 @@
     "filename": "./files/multipartcomplex.eml",
     "header": {
       "From": "info@theatreboulimie.com",
-      "To": "test@test.com"
+      "To": "test@test.com",
+      "ContentInfo": {
+        "Type": {
+          "Type": "multipart",
+          "Subtype": "mixed"
+        }
+      }
+
     },
     "displaycontent": false
   }
