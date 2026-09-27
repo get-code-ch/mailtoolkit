@@ -1,113 +1,58 @@
 package mailtoolkit
 
 import (
+	"mime"
+	"net/textproto"
 	"strings"
 )
 
-func getContentInfo(buffer []byte) ContentInfo {
-	var match [][]byte
-	contentInfo := ContentInfo{}
-	contentInfo.Type.Parameters = make(map[string]string)
-	contentInfo.Disposition.Parameters = make(map[string]string)
-
-	// Get End of Header (blank line)
-	end := firstLineRegex.FindIndex(buffer)[0]
-
-	// Get Attachments-Type
-	contentInfo.Type = getContentType(buffer[:end])
-
-	// Get Attachments-Disposition
-	contentInfo.Disposition = getContentDisposition(buffer[:end])
-
-	// Get Attachments-Transfer-Encoding Attachments-Transfer-Encoding:
-	match = contentTransferEncodingRegex.FindSubmatch(buffer[:end])
-	if match != nil {
-		contentInfo.TransferEncoding = quotesRegex.ReplaceAllString(string(match[1]), ``)
+func newContentInfo(h textproto.MIMEHeader) ContentInfo {
+	return ContentInfo{
+		Type:             parseContentType(h.Get("Content-Type")),
+		Disposition:      parseContentDisposition(h.Get("Content-Disposition")),
+		TransferEncoding: strings.ToLower(strings.TrimSpace(h.Get("Content-Transfer-Encoding"))),
+		ID:               strings.Trim(strings.TrimSpace(h.Get("Content-ID")), "<>"),
+		Description:      decodeHeader(h.Get("Content-Description")),
 	}
-
-	// Get Attachments-ID
-	match = contentIDRegex.FindSubmatch(buffer[:end])
-	if match != nil {
-		contentInfo.ID = quotesRegex.ReplaceAllString(string(match[1]), ``)
-	}
-	// Get Attachments-Description
-	match = contentDescriptionRegex.FindSubmatch(buffer[:end])
-	if match != nil {
-		contentInfo.Description = quotesRegex.ReplaceAllString(string(match[1]), ``)
-	}
-
-	return contentInfo
 }
 
-func getContentType(buffer []byte) ContentType {
-	contentType := ContentType{}
-	contentType.Parameters = make(map[string]string)
-	wrkCT := "" // working content-type string
+// parseContentType defaults to text/plain (RFC 2045 §5.2) when the field is
+// missing or invalid.
+func parseContentType(value string) ContentType {
+	contentType := ContentType{Type: "text", Subtype: "plain", Parameters: map[string]string{}}
 
-	// Find Attachments-Type
-	wrkBuffer := contentTypeRegex.FindSubmatch(buffer)
-	// If Attachments-Type is not found we assume content type is Text/plain (non MIME email) rest of datas are nil
-	if wrkBuffer == nil {
-		contentType.Type = "text"
-		contentType.Subtype = "plain"
+	mediaType, params := parseMediaType(value)
+	main, sub, ok := strings.Cut(mediaType, "/")
+	if !ok || main == "" || sub == "" {
 		return contentType
 	}
-	// Concatenate parameters to one string and removing whitespaces
-	for _, wb := range wrkBuffer[1:] {
-		wrkCT += string(wb)
-	}
-	wrkCT = whitespaceRegex.ReplaceAllString(wrkCT, ``)
-
-	//Extract parameters to a slice
-	parameters := semiColonRegex.Split(wrkCT, -1)
-
-	// Get Attachments Type and Subtype
-	se := slashRegex.Split(parameters[0], -1)
-	contentType.Type = se[0]
-	contentType.Subtype = se[1]
-
-	// Get Parameters
-	for _, param := range parameters[1:] {
-		se = parametersRegex.FindStringSubmatch(param)
-		if se != nil {
-			// Parameter attribute are normalized to lowercase
-			contentType.Parameters[strings.ToLower(se[1])] = se[2]
-		}
-	}
+	contentType.Type, contentType.Subtype, contentType.Parameters = main, sub, params
 	return contentType
 }
 
-func getContentDisposition(buffer []byte) ContentDisposition {
-	contentDisposition := ContentDisposition{}
-	contentDisposition.Parameters = make(map[string]string)
-	wrkCD := "" // working content-disposition string
+func parseContentDisposition(value string) ContentDisposition {
+	disposition, params := parseMediaType(value)
+	return ContentDisposition{Type: disposition, Parameters: params}
+}
 
-	// Find Attachments-Type
-	wrkBuffer := contentDispositionRegex.FindSubmatch(buffer)
-	// If Attachments-Type is not found we return empty structure
-	if wrkBuffer == nil {
-		return contentDisposition
+// parseMediaType wraps mime.ParseMediaType, keeping the media type when only
+// the parameters are invalid, and decodes RFC 2047 encoded file names as sent
+// by some mail clients.
+func parseMediaType(value string) (string, map[string]string) {
+	params := map[string]string{}
+	if strings.TrimSpace(value) == "" {
+		return "", params
 	}
-	// Concatenate parameters to one string and removing whitespaces
-	for _, wb := range wrkBuffer[1:] {
-		wrkCD += string(wb)
+
+	mediaType, parsed, err := mime.ParseMediaType(value)
+	if err != nil && err != mime.ErrInvalidMediaParameter {
+		return "", params
 	}
-	wrkCD = whitespaceRegex.ReplaceAllString(wrkCD, ``)
-
-	//Extract parameters to a slice
-	parameters := semiColonRegex.Split(wrkCD, -1)
-
-	// Get Attachments Type and Subtype
-	se := slashRegex.Split(parameters[0], -1)
-	contentDisposition.Type = se[0]
-
-	// Get Parameters
-	for _, param := range parameters[1:] {
-		se = parametersRegex.FindStringSubmatch(param)
-		if se != nil {
-			// Parameter attribute are normalized to lowercase
-			contentDisposition.Parameters[strings.ToLower(se[1])] = se[2]
+	for key, param := range parsed {
+		if key == "filename" || key == "name" {
+			param = decodeHeader(param)
 		}
+		params[key] = param
 	}
-	return contentDisposition
+	return mediaType, params
 }

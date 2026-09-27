@@ -1,72 +1,80 @@
 package mailtoolkit
 
 import (
+	"mime"
+	"net/mail"
+	"net/textproto"
+	"regexp"
 	"strings"
 )
 
-func ParseHeader(buffer []byte) Header {
-	var header Header
+var wordDecoder = &mime.WordDecoder{}
 
-	// Get End of Header (blank line)
-	end := firstLineRegex.FindIndex(buffer)
+// emailRegex is only a fallback for address fields net/mail cannot parse.
+var emailRegex = regexp.MustCompile(`[^\s<>"',;:()@]+@[^\s<>"',;:()@]+`)
 
-	// Get Header Elements
-	header.Elements = make(map[string]string)
-	elements := headerRegex.FindAllSubmatch(buffer[:end[0]], -1)
-	for _, element := range elements {
-		value := ""
-		for _, fieldValue := range element[2:] {
-			value += string(fieldValue)
-		}
-		// cleaning string from whitespaces and newline....
-		value = whitespaceRegex.ReplaceAllString(value, ``)
+func newHeader(h mail.Header) Header {
+	header := Header{Elements: make(map[string]string, len(h))}
 
-		key := strings.ToLower(string(element[1]))
-		_, exist := header.Elements[key]
-		if exist {
-			header.Elements[key] += "\n" + value
-		} else {
-			header.Elements[key] = value
-		}
+	for key, values := range h {
+		header.Elements[strings.ToLower(key)] = strings.Join(values, "\n")
 	}
 
-	_, header.IsMime = header.Elements["mime-version"]
-	header.ContentInfo = getContentInfo(buffer[:end[0]])
+	_, header.IsMime = h["Mime-Version"]
+	header.ContentInfo = newContentInfo(textproto.MIMEHeader(h))
 
-	e, ok := header.Elements["from"]
-	if ok {
-		header.From = emailRegex.FindStringSubmatch(e)[1]
-	}
-
-	e, ok = header.Elements["to"]
-	if ok {
-		header.To = emailRegex.FindStringSubmatch(e)[1]
+	header.FromList = parseAddresses(h.Get("From"))
+	if _, ok := h["To"]; ok {
+		header.ToList = parseAddresses(h.Get("To"))
 	} else {
-		e, ok = header.Elements["delivered-to"]
-		if ok {
-			header.To = emailRegex.FindStringSubmatch(e)[1]
-		}
+		header.ToList = parseAddresses(h.Get("Delivered-To"))
 	}
+	header.CcList = parseAddresses(h.Get("Cc"))
+	header.BccList = parseAddresses(h.Get("Bcc"))
 
-	e, ok = header.Elements["cc"]
-	if ok {
-		header.Cc = emailRegex.FindStringSubmatch(e)[1]
-	}
+	header.From = joinAddresses(header.FromList)
+	header.To = joinAddresses(header.ToList)
+	header.Cc = joinAddresses(header.CcList)
+	header.Bcc = joinAddresses(header.BccList)
 
-	e, ok = header.Elements["bcc"]
-	if ok {
-		header.Bcc = emailRegex.FindStringSubmatch(e)[1]
-	}
-
-	e, ok = header.Elements["subject"]
-	if ok {
-		header.Subject = e
-	}
-
-	e, ok = header.Elements["date"]
-	if ok {
-		header.Date = e
+	header.Subject = decodeHeader(h.Get("Subject"))
+	header.Date = h.Get("Date")
+	if t, err := mail.ParseDate(header.Date); err == nil {
+		header.Time = t
 	}
 
 	return header
+}
+
+// decodeHeader decodes RFC 2047 encoded-words, returning value unchanged if
+// it cannot be decoded.
+func decodeHeader(value string) string {
+	decoded, err := wordDecoder.DecodeHeader(value)
+	if err != nil {
+		return value
+	}
+	return decoded
+}
+
+func parseAddresses(value string) []*mail.Address {
+	if strings.TrimSpace(value) == "" {
+		return nil
+	}
+	parser := mail.AddressParser{WordDecoder: wordDecoder}
+	if list, err := parser.ParseList(value); err == nil {
+		return list
+	}
+	var list []*mail.Address
+	for _, address := range emailRegex.FindAllString(value, -1) {
+		list = append(list, &mail.Address{Address: address})
+	}
+	return list
+}
+
+func joinAddresses(list []*mail.Address) string {
+	addresses := make([]string, len(list))
+	for i, a := range list {
+		addresses[i] = a.Address
+	}
+	return strings.Join(addresses, ", ")
 }

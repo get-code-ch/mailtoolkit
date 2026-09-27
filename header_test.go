@@ -1,12 +1,12 @@
 package mailtoolkit
 
 import (
-	"io/ioutil"
+	"os"
 	"testing"
 )
 
 func TestParseHeader(t *testing.T) {
-	buffer, err := ioutil.ReadFile("./files/multipartcomplex.eml")
+	buffer, err := os.ReadFile("./files/multipartcomplex.eml")
 	if err != nil {
 		t.Fatal("Error opening test file:", err)
 	}
@@ -14,7 +14,10 @@ func TestParseHeader(t *testing.T) {
 	{
 		contentType := "multipart"
 		boundary := "----=_NextPart_000_006D_01D4415F.8115DFE0"
-		header := ParseHeader(buffer)
+		header, err := ParseHeader(buffer)
+		if err != nil {
+			t.Fatalf("\t%v ParseHeader: %v", ballotX, err)
+		}
 		if header.ContentInfo.Type.Type != contentType {
 			t.Fatalf("\t%v Error wrong Attachments-Type, should be \"%s\"", ballotX, contentType)
 		}

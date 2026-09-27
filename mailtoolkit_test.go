@@ -2,7 +2,7 @@ package mailtoolkit
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"os"
 	"reflect"
 	"testing"
 )
@@ -17,14 +17,16 @@ func TestParse(t *testing.T) {
 	var displayContent bool
 
 	// Import test directive from JSON files
-	buffer, err := ioutil.ReadFile(directiveFile)
+	buffer, err := os.ReadFile(directiveFile)
 	if err != nil {
 		t.Fatal("Error opening test directive:", err)
 	}
 
 	// Parse JSON to directives object array
 	var directives []map[string]interface{}
-	json.Unmarshal([]byte(buffer), &directives)
+	if err := json.Unmarshal(buffer, &directives); err != nil {
+		t.Fatal("Error parsing test directive:", err)
+	}
 
 	// Browse array of directives an run test
 	for idx := range directives {
@@ -32,12 +34,15 @@ func TestParse(t *testing.T) {
 		filename := directive["filename"].(string)
 
 		// open email file and parse content (call functions to be tested)
-		buffer, err := ioutil.ReadFile(filename)
+		buffer, err := os.ReadFile(filename)
 		if err != nil {
 			t.Fatal("Error opening test file:", err)
 		}
 		t.Logf("======= Testing mail parse %s =======", filename)
-		mail := Parse(buffer)
+		mail, err := Parse(buffer)
+		if err != nil {
+			t.Errorf("\t%v Parse %s: %v", ballotX, filename, err)
+		}
 
 		// Check result
 		d := directive["displaycontent"]
